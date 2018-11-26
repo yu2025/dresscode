@@ -11,6 +11,7 @@ var randomactivity
 // }
 window.onload = onLoad;
 
+
 function onLoad(){//ロードされた時に実行されるよ！
   // document.write("<script type='text/javascript' src='pagelist.js'></script>");
   console.log(x);
