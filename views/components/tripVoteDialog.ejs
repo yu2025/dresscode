@@ -1,0 +1,106 @@
+<!-- 生成された謎旅に投票するコンポーネント -->
+<style>
+    .tripVoteContainer {
+        margin-top: 10%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+</style>
+
+<script>
+    window.onload = () => {
+        const goodButton = document.getElementById("goodButton");
+        const badButton = document.getElementById("badButton");
+        const cancelButton = document.getElementById("cancel");
+        const submitButton = document.getElementById("submit");
+        const badDialog = document.getElementById("badDialog");
+        const responseDialog = document.getElementById("responseDialog");
+        const responseMessage = document.getElementById("responseMessage");
+
+        const placeText = document.getElementById("placeText").innerText;
+        const activityText = document.getElementById("activityText").innerText;
+
+        const displayDialog = (message) => {
+            //モーダルを開く
+            responseDialog.showModal();
+            responseMessage.innerText = message;
+            //ダイアログを0.8秒(800ミリ秒)後に閉じる
+            setTimeout(() => {
+                responseDialog.close();
+                responseMessage.innerText = "";
+            }, 800);
+        };
+
+        const getNow = () => {
+            const today = new Date();
+            return `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDay()}`
+        }
+
+        const handleGoodButton = () => {
+            //謎旅をgoodに投票するAPIを叩く
+            const pushMessage = `[${placeText}]で[${activityText}] ${getNow()}`
+            window.open(`https://scrapbox.io/nazotabi/GoodNazotabi?body=${pushMessage}`)
+        };
+
+        const handleCancelButton = () => {
+            //投票せずダイアログを閉じる
+            badDialog.close();
+        };
+
+        const handleSubmitButton = () => {
+            const reason = document.getElementById("reason").value
+            const reasonText = document.getElementById("reasonText").value
+
+            const pushMessage = `[${placeText}]で[${activityText}] 理由 : ${reason} ${reasonText} ${getNow()}`
+            window.open(`https://scrapbox.io/nazotabi/BadNazotabi?body=${pushMessage}`)
+            badDialog.close();
+        }
+
+        const handleBadButton = () => {
+            //bad投票ダイアログを開く
+            badDialog.showModal();
+        }
+
+        if (goodButton && badButton && cancelButton && submitButton && badDialog && responseDialog) {
+            goodButton.addEventListener('click', handleGoodButton);
+            badButton.addEventListener('click', handleBadButton);
+            cancelButton.addEventListener('click', handleCancelButton)
+            submitButton.addEventListener('click', handleSubmitButton)
+        } else {
+            console.error("something went wrong!");
+        }
+    };
+</script>
+
+<div class="tripVoteContainer">
+    <input type="submit" value="いいね!" id="goodButton">
+    <input type="submit" value="イマイチ!" id="badButton">
+</div>
+
+<!-- 汎用ダイアログ -->
+<dialog id="responseDialog">
+    <div id="responseMessage"></div>
+</dialog>
+
+<!-- イマイチな謎旅投票用ダイアログ -->
+<dialog id="badDialog">
+    <p>
+        <label>イマイチな理由を教えてください
+            <select id="reason">
+                <option>場所的に無理なアクティビティ</option>
+                <option>普通すぎてつまらない</option>
+                <option>その他</option>
+            </select>
+        </label>
+        <label>自由記述
+            <input type="text" id="reasonText">
+        </label>
+    </p>
+    <menu>
+        <button id="cancel">キャンセル</button>
+        <input id="submit" type="submit" value="badに投票する">
+    </menu>
+</dialog>
