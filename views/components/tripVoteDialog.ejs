@@ -17,15 +17,13 @@
         const cancelButton = document.getElementById("cancel");
         const submitButton = document.getElementById("submit");
         const badDialog = document.getElementById("badDialog");
-        const responseDialog = document.getElementById("responseDialog");
-        const responseMessage = document.getElementById("responseMessage");
 
         const placeText = document.getElementById("placeText").innerText;
         const activityText = document.getElementById("activityText").innerText;
 
         const getNow = () => {
             const today = new Date();
-            return `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDay()}`
+            return `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDay()} ${today.getHours()}:${today.getMinutes()}`
         }
 
         const handleGoodButton = () => {
@@ -53,7 +51,7 @@
             badDialog.showModal();
         }
 
-        if (goodButton && badButton && cancelButton && submitButton && badDialog && responseDialog) {
+        if (goodButton && badButton && cancelButton && submitButton && badDialog) {
             goodButton.addEventListener('click', handleGoodButton);
             badButton.addEventListener('click', handleBadButton);
             cancelButton.addEventListener('click', handleCancelButton)
@@ -68,11 +66,6 @@
     <input type="submit" value="いいね!" id="goodButton">
     <input type="submit" value="イマイチ!" id="badButton">
 </div>
-
-<!-- 汎用ダイアログ -->
-<dialog id="responseDialog">
-    <div id="responseMessage"></div>
-</dialog>
 
 <!-- イマイチな謎旅投票用ダイアログ -->
 <dialog id="badDialog">
