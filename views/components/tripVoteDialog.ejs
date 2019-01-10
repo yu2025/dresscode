@@ -23,17 +23,6 @@
         const placeText = document.getElementById("placeText").innerText;
         const activityText = document.getElementById("activityText").innerText;
 
-        const displayDialog = (message) => {
-            //モーダルを開く
-            responseDialog.showModal();
-            responseMessage.innerText = message;
-            //ダイアログを0.8秒(800ミリ秒)後に閉じる
-            setTimeout(() => {
-                responseDialog.close();
-                responseMessage.innerText = "";
-            }, 800);
-        };
-
         const getNow = () => {
             const today = new Date();
             return `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDay()}`

@@ -5,7 +5,6 @@ moment.locale('ja');
 const app = express();
 const getScrapBox = require("./utils/getScrapBox");
 const getRandomPair = require("./utils/getRandomPair");
-const pushScrapBox = require("./utils/pushScrapBox");
 const port = process.env.PORT || 3000;
 const projectURL = process.env.PROJECT_URL || "nazotabi";
 
@@ -41,33 +40,6 @@ app.get("/api/generate", async (req, res) => {
         activityImage: randomPair[1].image
     });
 });
-
-//良い謎旅をScrapBoxに登録する
-//ブラウザでスクボを実行していないとスクボには書き込めないのでサーバーから書き込むのはなし
-// app.post("/api/good", async (req, res) => {
-//     const pushMessage = `${req.body.good_trip} ${moment().format('YYYY-MM-DD-HH-MM')}`;
-//     console.log(pushMessage);
-//     console.log(encodeURIComponent(pushMessage));
-//     const request = await pushScrapBox("nazotabi","GoodNazotabi",encodeURIComponent(pushMessage)).catch(error => {
-//         console.log(error);
-//         res.status(404).end();
-//     });
-//     console.log(request.status);
-//     res.status(200).end();
-// });
-
-// //イマイチな謎旅をScrapBoxに登録する
-// app.post("/api/bad", async (req, res) => {
-//     const pushMessage = `${req.body.bad_trip} 理由: ${req.body.bad_reason} ${req.body.bad_reason_text} ${moment().format('YYYY-MM-DD-HH-MM')}`;
-//     console.log(pushMessage);
-//     console.log(encodeURIComponent(pushMessage));
-//     const request = await pushScrapBox("nazotabi","BadNazotabi",encodeURIComponent(pushMessage)).catch(error => {
-//         console.log(error);
-//         res.status(404).end();
-//     });
-//     console.log(request.status);
-//     res.status(200).end();
-// });
 
 app.listen(port, () => {
     console.log("server is ready>:)");
