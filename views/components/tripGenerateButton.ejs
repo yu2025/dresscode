@@ -1,0 +1,18 @@
+<!--謎旅を生成するボタンのコンポーネント。includeすればどこでも再利用できる-->
+<style>
+    .generatorContainer {
+        margin-top: 10%;
+    }
+
+    #generator {
+        font-size: 10em;
+        text-align: center;
+    }
+</style>
+
+<div class="generatorContainer">
+    <form action="/api/generate" method="get">
+        <input type="submit" value="新しいnazotabi~謎旅~を生成する" id="generator">
+        <!-- ボタンを押すとサーバー側(app.js)のルート/api/generateをGET通信で叩く -->
+    </form>
+</div>

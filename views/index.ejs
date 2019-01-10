@@ -1,0 +1,28 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> <%= title %> </title>
+
+    <style>
+        #main_container {
+            max-width: 80%;
+            align-content: center;
+            align-self: center;
+        }
+        #header1 {
+            font-family: Helvetica;
+        }
+    </style>
+</head>
+<body>
+<div id="main_container">
+    <h1 id="header1">Nazotabi</h1>
+
+    <h3>Nazotabi~謎旅~とは?</h3>
+    <p>"場所"と"アクティビティ"とをランダムに組み合わせることによって</p>
+    <p>セレンディピティに富んだ旅行プランを提案するアプリです。</p>
+
+    <%- include('components/tripGenerateButton') %>
+</div>
+</body>
+</html>
