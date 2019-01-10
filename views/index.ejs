@@ -1,0 +1,38 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> <%= title %> </title>
+
+    <script>
+        window.onload = () => {
+            const generator = document.getElementById("generator")
+
+            if (generator) {
+                fetch(nazotabi)
+            } else {
+                console.error("something went wrong!");
+            }
+        };
+    </script>
+
+    <style>
+        #main_container {
+            max-width: 80%;
+        }
+
+        #header1 {
+            font-family: Helvetica;
+        }
+    </style>
+</head>
+<body>
+<div id="main_container">
+    <h1 id="header1">Nazotabi</h1>
+    <h3>Nazotabi~謎旅~とは?</h3>
+    <p>"場所"と"アクティビティ"とをランダムに組み合わせることによってセレンディピティに富んだ旅行プランを提案するアプリです。</p>
+    <div class="nazotabiSection">
+        <input type="button" value="新しいnazotabi~謎旅~を生成する" id="generator">
+    </div>
+</div>
+</body>
+</html>

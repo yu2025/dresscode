@@ -1,21 +1,20 @@
 {
   "name": "nazotabi",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "pagelist.js",
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "dotenv": "^6.1.0",
-    "express": "^4.16.4",
-    "mongodb": "^3.1.10",
-    "mongoose": "^5.3.14"
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node pagelist.js"
+    "start": "node app.js"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "hykwtakumin",
+  "license": "MIT"
 }
