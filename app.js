@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 //トップページにアクセスされた場合
 app.get("/", async (req, res) => {
     res.render('index', {
-        title: "Nazotabi",
+        title: "dresscode",
     });
 });
 
@@ -25,7 +25,7 @@ app.get("/", async (req, res) => {
 app.get("/api/generate", async (req, res) => {
     /*スクボの全データを取得してくる*/
     const scrapboxData = await getScrapBox(projectURL);
-    /*"#place"タグのついた記事を抽出して配列に格納*/
+    /*"#tops"タグのついた記事を抽出して配列に格納*/
     const places = scrapboxData.pages.filter(page => page.descriptions.includes("#tops"));
     /*"#activity"タグのついた記事を抽出して配列に格納*/
     const activities = scrapboxData.pages.filter(page => page.descriptions.includes("#bottoms"));
@@ -33,7 +33,7 @@ app.get("/api/generate", async (req, res) => {
     const randomPair = getRandomPair(places, activities);
 
     res.render('suggest', {
-        title: "Nazotabi",
+        title: "dresscode",
         placeName: randomPair[0].title,
         placeImage: randomPair[0].image,
         activityName: randomPair[1].title,
