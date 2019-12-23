@@ -1,2 +1,2 @@
-# nazotabi
-scrapbox nazotabi
+# DRESSCODE
+scrapbox dresscode
