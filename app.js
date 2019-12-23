@@ -6,7 +6,7 @@ const app = express();
 const getScrapBox = require("./utils/getScrapBox");
 const getRandomPair = require("./utils/getRandomPair");
 const port = process.env.PORT || 3000;
-const projectURL = process.env.PROJECT_URL || "nazotabi";
+const projectURL = process.env.PROJECT_URL || "dresscode";
 
 //EJSをViewエンジンとして用いるよう設定
 app.set("view engine", "ejs");
@@ -26,9 +26,9 @@ app.get("/api/generate", async (req, res) => {
     /*スクボの全データを取得してくる*/
     const scrapboxData = await getScrapBox(projectURL);
     /*"#place"タグのついた記事を抽出して配列に格納*/
-    const places = scrapboxData.pages.filter(page => page.descriptions.includes("#place"));
+    const places = scrapboxData.pages.filter(page => page.descriptions.includes("#tops"));
     /*"#activity"タグのついた記事を抽出して配列に格納*/
-    const activities = scrapboxData.pages.filter(page => page.descriptions.includes("#activity"));
+    const activities = scrapboxData.pages.filter(page => page.descriptions.includes("#bottoms"));
     /*ランダムなペアを取得する*/
     const randomPair = getRandomPair(places, activities);
 
