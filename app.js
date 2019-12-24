@@ -1,7 +1,5 @@
 const express = require("express");
-const moment = require('moment');
 const bodyParser = require("body-parser");
-moment.locale('ja');
 const app = express();
 const getScrapBox = require("./utils/getScrapBox");
 const getRandomPair = require("./utils/getRandomPair");
