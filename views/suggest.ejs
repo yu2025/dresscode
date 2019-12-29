@@ -24,8 +24,15 @@
         }
 
         #bottoms {
-            width: 35%;
-            height: 30%;
+            width: 276px;
+            height: 368px;
+            position:absolute;
+            left:50%;
+            transform:translate(-50%,0);
+        }
+        
+        .imagearea{
+        padding-top: 50px;
         }
 
         .spanText {
@@ -36,7 +43,7 @@
 </head>
 <body>
 <div id="main_container">
-    <div class="nazotabiArea">
+    <div class="imagearea">
         <!--トップスを表示するエリア-->
         <img id="tops" src=" <%- topsImage %> " alt=" <%- topsName %> ">
 
