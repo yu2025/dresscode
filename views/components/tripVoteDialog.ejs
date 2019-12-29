@@ -20,19 +20,14 @@
   const topsText = document.getElementById("topsText").innerText;
   const bottomsText = document.getElementById("bottomsText").innerText;
 
-        const getNow = () => {
-            const today = new Date();
-            return `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDay()} ${today.getHours()}:${today.getMinutes()}`
-        };
-
         document.getElementById("goodButton").onclick = function(){
             //謎旅をgoodに投票するAPIを叩く
-            const pushMessage = `[${topsText}]と[${bottomsText}] ${getNow()}`
+            //const pushMessage = `[${topsText}]と[${bottomsText}]`
             window.open(`https://scrapbox.io/dresscode/GoodDresscode?body=${pushMessage}`);
         };
 
         document.getElementById("badButton").onclick = function(){
-            const pushMessage = `[${topsText}]と[${bottomsText}]`
+            //const pushMessage = `[${topsText}]と[${bottomsText}]`
             window.open(`https://scrapbox.io/dresscode/bad_dresscode?body=${pushMessage}`);
         };
 </script>
