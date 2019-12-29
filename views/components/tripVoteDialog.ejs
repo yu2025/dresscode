@@ -1,10 +1,3 @@
-<div class="tripVoteContainer">
-    <input type="submit" value="いいね!" id="goodButton">
-  <form action="/api/generate" method="get">
-    <input type="submit" value="イマイチ!" id="badButton">
-  </form>
-</div>
-
 <style>
     .tripVoteContainer {
         margin-top: 10%;
@@ -17,31 +10,29 @@
 </style>
 
 <script>
-    function voteScrap(){
-        const badButton = document.getElementById("badButton");
         const topsText = document.getElementById("topsText").innerText;
         const bottomsText = document.getElementById("bottomsText").innerText;
 
         const getNow = () => {
             const today = new Date();
             return `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDay()} ${today.getHours()}:${today.getMinutes()}`
-        }
+        };
 
         document.getElementById("goodButton").onclick = function(){
             //謎旅をgoodに投票するAPIを叩く
             const pushMessage = `[${topsText}]と[${bottomsText}] ${getNow()}`
             window.open(`https://scrapbox.io/dresscode/GoodDresscode?body=${pushMessage}`)
-        }
+        };
 
-        const handleBadButton = () => {
+        document.getElementById("badButton").onclick = function(){
             const pushMessage = `[${topsText}]と[${bottomsText}]`
             window.open(`https://scrapbox.io/dresscode/bad_dresscode?body=${pushMessage}`)
-        }
-
-        if (badButton) {
-            badButton.addEventListener('click', handleBadButton);
-        } else {
-            console.error("something went wrong!");
-        }
-    };
+        };
 </script>
+
+<div class="tripVoteContainer">
+    <input type="submit" value="いいね!" id="goodButton">
+  <form action="/api/generate" method="get">
+    <input type="submit" value="イマイチ!" id="badButton">
+  </form>
+</div>
