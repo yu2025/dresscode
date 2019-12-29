@@ -21,12 +21,12 @@
   const bottomsName = document.getElementById("bottomsName").innerText;
   document.getElementById("goodButton").onclick = function(){
   //謎旅をgoodに投票するAPIを叩く
-  const pushMessage = '[${topsText}]と[${bottomsText}]'
+  const pushMessage = '[${topsName}]と[${bottomsName}]'
   window.open('https://scrapbox.io/dresscode/GoodDresscode?body=${pushMessage}');
   }
   
   document.getElementById("badButton").onclick = function(){
-  const pushMessage = '[${topsText}]と[${bottomsText}]';
+  const pushMessage = '[${topsName}]と[${bottomsName}]';
   window.open('https://scrapbox.io/dresscode/bad_dresscode?body=${pushMessage}');
   }
 </script>
