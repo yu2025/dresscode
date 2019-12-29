@@ -20,12 +20,24 @@
       transform:translate(-50%,-50%);
       }
       
-      .h3{
+      #main_container > h3{
       text-align:center;
       }
       
       #main_container > p{
       text-align:center;
+      }
+      
+      .generator-container > h3{
+      color: #212121;
+      margin-top: 50px;
+      text-align: center;
+      }
+      
+      .generator-container > p{
+      font-size: 15px;
+      line-height: 25px;
+      margin:20px 250px 0 250px;
       }
     </style>
 </head>
@@ -37,9 +49,11 @@
 <div id="main_container">
     <h3>ドレスコードの判定をしよう</h3>
     <p>
-    就活中や社会人になった後に求められるドレスコードに不安を抱く人は少なからずいます。<br>
-    そのような方達のために、表示されるドレスコードが適切かどうかを判定してください<br>
-    これは、判定者の主観で構いません。
+    ドレスコードといってもフォーマル、セミフォーマルなど様々な種類があります<br>
+    その中でも、オフィスカジュアルやビジネスアタイアは就活生や社会人に多く求められるドレスコードではないでしょうか？
+    いざ、そのようなドレスコードを求められた際、困惑する人は多いと思います<br>
+    そこで、以下のボタンから、ドレスコードの判定をしてください！<br>
+    いいね！の投票数が多いほど、良いコーディネートとして保存されます<br>
     </p>
     <%- include('components/tripGenerateButton') %>
 </div>
