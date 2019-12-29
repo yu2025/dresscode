@@ -15,7 +15,7 @@
         const goodButton = document.getElementById("goodButton");
         const badButton = document.getElementById("badButton");
 
-        const topsName = document.getElementById("topsName").innerText;
+        const topsText = document.getElementById("topsText").innerText;
         const bottomsText = document.getElementById("bottomsText").innerText;
 
         const getNow = () => {
@@ -25,12 +25,12 @@
 
         const handleGoodButton = () => {
             //謎旅をgoodに投票するAPIを叩く
-            const pushMessage = `[${topsName}]と[${bottomsText}] ${getNow()}`
+            const pushMessage = `[${topsText}]と[${bottomsText}] ${getNow()}`
             window.open(`https://scrapbox.io/dresscode/GoodDresscode?body=${pushMessage}`)
         };
 
         const handleBadButton = () => {
-            const pushMessage = `[${topsName}]と[${bottomsText}]`
+            const pushMessage = `[${topsText}]と[${bottomsText}]`
             window.open(`https://scrapbox.io/dresscode/bad_dresscode?body=${pushMessage}`)
         }
 
