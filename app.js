@@ -10,7 +10,7 @@ const projectURL = process.env.PROJECT_URL || "dresscode";
 
 //EJSをViewエンジンとして用いるよう設定
 app.set("view engine", "ejs");
-app.use( express.static( "public" ) );
+app.use(express.static( "public"));
 
 //bodyParserを使用
 app.use(bodyParser.urlencoded({extended: true}));
