@@ -15,8 +15,8 @@
         const goodButton = document.getElementById("goodButton");
         const badButton = document.getElementById("badButton");
 
-        const placeText = document.getElementById("topsText").innerText;
-        const activityText = document.getElementById("bottomsText").innerText;
+        const topsText = document.getElementById("topsText").innerText;
+        const Text = document.getElementById("bottomsText").innerText;
 
         const getNow = () => {
             const today = new Date();
@@ -29,23 +29,13 @@
             window.open(`https://scrapbox.io/dresscode/good_dresscode?body=${pushMessage}`)
         };
 
-        const handleCancelButton = () => {
-            //投票せずダイアログを閉じる
-            badDialog.close();
-        };
-
-        const handleSubmitButton = () => {
-            const pushMessage = `[${topsText}]で[${bottomsText}] 
+        const handleBadButton = () => {
+            const pushMessage = `[${topsText}]と[${bottomsText}] 
             window.open(`https://scrapbox.io/dresscode/bad_dresscode?body=${pushMessage}`)
             badDialog.close();
         }
 
-        const handleBadButton = () => {
-            //bad投票ダイアログを開く
-            badDialog.showModal();
-        }
-
-        if (goodButton && badButton && cancelButton && submitButton && badDialog) {
+        if (goodButton && badButton) {
             goodButton.addEventListener('click', handleGoodButton);
             badButton.addEventListener('click', handleBadButton);
         } else {
