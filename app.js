@@ -27,18 +27,18 @@ app.get("/api/generate", async (req, res) => {
     /*スクボの全データを取得してくる*/
     const scrapboxData = await getScrapBox(projectURL);
     /*"#tops"タグのついた記事を抽出して配列に格納*/
-    const places = scrapboxData.pages.filter(page => page.descriptions.includes("#tops"));
+    const tops = scrapboxData.pages.filter(page => page.descriptions.includes("#tops"));
     /*"#activity"タグのついた記事を抽出して配列に格納*/
-    const activities = scrapboxData.pages.filter(page => page.descriptions.includes("#bottoms"));
+    const bottoms = scrapboxData.pages.filter(page => page.descriptions.includes("#bottoms"));
     /*ランダムなペアを取得する*/
     const randomPair = getRandomPair(places, activities);
 
     res.render('suggest', {
         title: "dresscode",
-        placeName: randomPair[0].title,
-        placeImage: randomPair[0].image,
-        activityName: randomPair[1].title,
-        activityImage: randomPair[1].image
+        topsName: randomPair[0].title,
+        topsImage: randomPair[0].image,
+        bottomsName: randomPair[1].title,
+        bottomsImage: randomPair[1].image
     });
 });
 
