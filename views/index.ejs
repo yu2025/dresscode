@@ -6,13 +6,18 @@
       #header1{
         color:red;
       }
+      body > img{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      }
     </style>
 </head>
 
 <body>
 <img src="/image/logo.png" />
 <div id="main_container">
-    <header>ドレスコード</header>
     <h3>ドレスコードとは?</h3>
 
     <%- include('components/tripGenerateButton') %>
