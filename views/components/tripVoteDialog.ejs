@@ -17,16 +17,16 @@
 </style>
 
 <script>
-  //const topsText = document.getElementById("topsText").innerText;
-  //const bottomsText = document.getElementById("bottomsText").innerText;
+  const topsText = document.getElementById("topsText").innerText;
+  const bottomsText = document.getElementById("bottomsText").innerText;
   document.getElementById("goodButton").onclick = function(){
   //謎旅をgoodに投票するAPIを叩く
-  //const pushMessage = `[${topsText}]と[${bottomsText}]`
+  const pushMessage = `[${topsText}]と[${bottomsText}]`
   window.open('https://scrapbox.io/dresscode/GoodDresscode?body=${pushMessage}');
   }
   
   document.getElementById("badButton").onclick = function(){
-  //const pushMessage = `[${topsText}]と[${bottomsText}]`
+  const pushMessage = `[${topsText}]と[${bottomsText}]`
   window.open(`https://scrapbox.io/dresscode/bad_dresscode?body=${pushMessage}`);
   }
 </script>
