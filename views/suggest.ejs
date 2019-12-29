@@ -22,6 +22,8 @@
             left:50%;
             transform:translate(-50%,0);
         }
+        
+        
 
         #bottoms {
             width: 276px;
@@ -39,16 +41,34 @@
             font-size: 4em;
         }
         
+        #tops-area > p{
+        text-align:center;
+        }
+        
+        #bottoms-area{
+        padding-top:50px;
+        }
+        
+        #bottoms-area > p{
+        text-align:center;
+        }
+        
     </style>
 </head>
 <body>
 <div id="main_container">
     <div class="imagearea">
         <!--トップスを表示するエリア-->
-        <img id="tops" src=" <%- topsImage %> " alt=" <%- topsName %> ">
+        <div id="tops-area">
+          <p>TOPS</p>
+          <img id="tops" src=" <%- topsImage %> " alt=" <%- topsName %> ">
+        </div>
 
         <!--ボトムスを表示するエリア-->
-        <img id="bottoms" src=" <%- bottomsImage %> " alt=" <%- bottomsName %> ">
+        <div id="bottoms-area">
+          <p>BOTTOMS</p>
+          <img id="bottoms" src=" <%- bottomsImage %> " alt=" <%- bottomsName %> ">
+        </div>
     </div>
     <!-- 謎旅投票ボタン -->
     <%- include('components/tripVoteDialog') %>
