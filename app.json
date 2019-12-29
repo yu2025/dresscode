@@ -50,8 +50,8 @@
   ],
   "environments": {
     "test": {
-      "scripts": {
-        "test": "node app.js"
+      "env": {
+        "HOGEHOGE_MODE": "online"
       }
     }
   }
