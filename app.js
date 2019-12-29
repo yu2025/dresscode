@@ -31,7 +31,7 @@ app.get("/api/generate", async (req, res) => {
     /*"#activity"タグのついた記事を抽出して配列に格納*/
     const bottoms = scrapboxData.pages.filter(page => page.descriptions.includes("#bottoms"));
     /*ランダムなペアを取得する*/
-    const randomPair = getRandomPair(places, activities);
+    const randomPair = getRandomPair(tops, bottoms);
 
     res.render('suggest', {
         title: "dresscode",
