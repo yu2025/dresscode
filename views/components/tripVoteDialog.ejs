@@ -12,8 +12,8 @@
 
 <script>
     window.onload = () => {
-        const goodButton = document.getElementById("goodButton").onclick;
-        const badButton = document.getElementById("badButton").onclick;
+        const goodButton = document.getElementById("goodButton");
+        const badButton = document.getElementById("badButton");
 
         const topsText = document.getElementById("topsText").innerText;
         const bottomsText = document.getElementById("bottomsText").innerText;
@@ -44,9 +44,7 @@
 </script>
 
 <div class="tripVoteContainer">
-  <form action="/api/generate" method="get">
     <input type="submit" value="いいね!" id="goodButton">
-  </form>
   <form action="/api/generate" method="get">
     <input type="submit" value="イマイチ!" id="badButton">
   </form>
