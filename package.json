@@ -11,7 +11,16 @@
     "express": "^4.16.4",
     "moment": "^2.23.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "environments": {
+    "test": {
+      "scripts": {
+        "test-setup": "npm install mocha",
+        "test": "mocha"
+      }
+    }
+  }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
