@@ -51,7 +51,8 @@
   "environments": {
     "test": {
       "scripts": {
-        "test": "bundle exec rake test"
+        "test-setup": "npm install mocha",
+        "test": "mocha"
       }
     }
   }
