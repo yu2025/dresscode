@@ -1,9 +1,3 @@
-<div class="tripVoteContainer">
-    <input type="submit" value="いいね!" id="goodButton">
-  <form action="/api/generate" method="get">
-    <input type="submit" value="イマイチ!" id="badButton">
-  </form>
-</div>
 
 <style>
     .tripVoteContainer {
@@ -17,17 +11,23 @@
 </style>
 
 <script>
-  const topsText = document.getElementById("topsText").innerText;
-  const bottomsText = document.getElementById("bottomsText").innerText;
-
-        document.getElementById("goodButton").onclick = function(){
-            //謎旅をgoodに投票するAPIを叩く
-            //const pushMessage = `[${topsText}]と[${bottomsText}]`
-            window.open(`https://scrapbox.io/dresscode/GoodDresscode?body=${pushMessage}`);
-        };
-
-        document.getElementById("badButton").onclick = function(){
-            //const pushMessage = `[${topsText}]と[${bottomsText}]`
-            window.open(`https://scrapbox.io/dresscode/bad_dresscode?body=${pushMessage}`);
-        };
+  //const topsText = document.getElementById("topsText").innerText;
+  //const bottomsText = document.getElementById("bottomsText").innerText;
+  document.getElementById("goodButton").onclick = function(){
+  //謎旅をgoodに投票するAPIを叩く
+  //const pushMessage = `[${topsText}]と[${bottomsText}]`
+  window.open(`https://scrapbox.io/dresscode/GoodDresscode?body=${pushMessage}`);
+  }
+  
+  document.getElementById("badButton").onclick = function(){
+  //const pushMessage = `[${topsText}]と[${bottomsText}]`
+  window.open(`https://scrapbox.io/dresscode/bad_dresscode?body=${pushMessage}`);
+  };
 </script>
+
+<div class="tripVoteContainer">
+    <input type="submit" value="いいね!" id="goodButton">
+  <form action="/api/generate" method="get">
+    <input type="submit" value="イマイチ!" id="badButton">
+  </form>
+</div>
