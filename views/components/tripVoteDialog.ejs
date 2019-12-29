@@ -1,3 +1,10 @@
+<div class="tripVoteContainer">
+    <input type="submit" value="いいね!" id="goodButton">
+  <form action="/api/generate" method="get">
+    <input type="submit" value="イマイチ!" id="badButton">
+  </form>
+</div>
+
 <style>
     .tripVoteContainer {
         margin-top: 10%;
@@ -10,7 +17,7 @@
 </style>
 
 <script>
-    window.onload = () => {
+    function voteScrap(){
         const badButton = document.getElementById("badButton");
         const topsText = document.getElementById("topsText").innerText;
         const bottomsText = document.getElementById("bottomsText").innerText;
@@ -38,10 +45,3 @@
         }
     };
 </script>
-
-<div class="tripVoteContainer">
-    <input type="submit" value="いいね!" id="goodButton">
-  <form action="/api/generate" method="get">
-    <input type="submit" value="イマイチ!" id="badButton">
-  </form>
-</div>
