@@ -1,3 +1,10 @@
+<div class="tripVoteContainer">
+    <input type="submit" value="いいね!" id="goodButton">
+  <form action="/api/generate" method="get">
+    <input type="submit" value="イマイチ!" id="badButton">
+  </form>
+</div>
+
 <style>
     .tripVoteContainer {
         margin-top: 10%;
@@ -29,10 +36,3 @@
             window.open(`https://scrapbox.io/dresscode/bad_dresscode?body=${pushMessage}`)
         };
 </script>
-
-<div class="tripVoteContainer">
-    <input type="submit" value="いいね!" id="goodButton">
-  <form action="/api/generate" method="get">
-    <input type="submit" value="イマイチ!" id="badButton">
-  </form>
-</div>
