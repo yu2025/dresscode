@@ -13,13 +13,13 @@
   },
   "devDependencies": {
     "environments": {
-    "test": {
-      "scripts": {
-        "test-setup": "npm install mocha",
-        "test": "mocha"
+      "test": {
+        "scripts": {
+          "test-setup": "npm install mocha",
+          "test": "mocha"
+        }
       }
     }
-  }
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
