@@ -21,7 +21,7 @@
   const bottomsName = document.getElementById("bottomsName").innerText;
   document.getElementById("goodButton").onclick = function(){
   //謎旅をgoodに投票するAPIを叩く
-  const pushMessage = '[${topsName}]と[${bottomsName}]'
+  const pushMessage = '[${topsName}]と[${bottomsName}]';
   window.open('https://scrapbox.io/dresscode/GoodDresscode?body=${pushMessage}');
   }
   
