@@ -51,7 +51,6 @@
   "environments": {
     "test": {
       "scripts": {
-        "test-setup": "npm install mocha",
         "test": "mocha"
       }
     }
