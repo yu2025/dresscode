@@ -14,12 +14,9 @@
     window.onload = () => {
         const goodButton = document.getElementById("goodButton");
         const badButton = document.getElementById("badButton");
-        const cancelButton = document.getElementById("cancel");
-        const submitButton = document.getElementById("submit");
-        const badDialog = document.getElementById("badDialog");
 
-        const placeText = document.getElementById("placeText").innerText;
-        const activityText = document.getElementById("activityText").innerText;
+        const placeText = document.getElementById("topsText").innerText;
+        const activityText = document.getElementById("bottomsText").innerText;
 
         const getNow = () => {
             const today = new Date();
@@ -28,8 +25,8 @@
 
         const handleGoodButton = () => {
             //謎旅をgoodに投票するAPIを叩く
-            const pushMessage = `[${placeText}]で[${activityText}] ${getNow()}`
-            window.open(`https://scrapbox.io/nazotabi/GoodNazotabi?body=${pushMessage}`)
+            const pushMessage = `[${topsText}]と[${bottomsText}] ${getNow()}`
+            window.open(`https://scrapbox.io/dresscode/good_dresscode?body=${pushMessage}`)
         };
 
         const handleCancelButton = () => {
@@ -38,11 +35,8 @@
         };
 
         const handleSubmitButton = () => {
-            const reason = document.getElementById("reason").value
-            const reasonText = document.getElementById("reasonText").value
-
-            const pushMessage = `[${placeText}]で[${activityText}] 理由 : ${reason} ${reasonText} ${getNow()}`
-            window.open(`https://scrapbox.io/nazotabi/BadNazotabi?body=${pushMessage}`)
+            const pushMessage = `[${topsText}]で[${bottomsText}] 
+            window.open(`https://scrapbox.io/dresscode/bad_dresscode?body=${pushMessage}`)
             badDialog.close();
         }
 
@@ -54,8 +48,6 @@
         if (goodButton && badButton && cancelButton && submitButton && badDialog) {
             goodButton.addEventListener('click', handleGoodButton);
             badButton.addEventListener('click', handleBadButton);
-            cancelButton.addEventListener('click', handleCancelButton)
-            submitButton.addEventListener('click', handleSubmitButton)
         } else {
             console.error("something went wrong!");
         }
@@ -66,23 +58,3 @@
     <input type="submit" value="いいね!" id="goodButton">
     <input type="submit" value="イマイチ!" id="badButton">
 </div>
-
-<!-- イマイチな謎旅投票用ダイアログ -->
-<dialog id="badDialog">
-    <p>
-        <label>イマイチな理由を教えてください
-            <select id="reason">
-                <option>場所的に無理なアクティビティ</option>
-                <option>普通すぎてつまらない</option>
-                <option>その他</option>
-            </select>
-        </label>
-        <label>自由記述
-            <input type="text" id="reasonText">
-        </label>
-    </p>
-    <menu>
-        <button id="cancel">キャンセル</button>
-        <input id="submit" type="submit" value="badに投票する">
-    </menu>
-</dialog>
