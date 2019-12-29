@@ -15,20 +15,12 @@
             text-align: center;
         }
 
-        #placeText {
-            font-size: 6em;
-        }
-
-        #activityText {
-            font-size: 6em;
-        }
-
-        #place {
+        #tops {
             width: 35%;
             height: 30%;
         }
 
-        #activity {
+        #bottoms {
             width: 35%;
             height: 30%;
         }
@@ -50,19 +42,12 @@
 </head>
 <body>
 <div id="main_container">
-
-    <div id="suggestionArea">
-        <span id="placeText"><%- placeName %></span>
-        <span class="spanText">で</span>
-        <span id="activityText"><%- activityName %></span>
-    </div>
-
     <div class="nazotabiArea">
-        <!--場所を表示するエリア-->
-        <img id="place" src=" <%- placeImage %> " alt=" <%- placeName %> ">
+        <!--トップスを表示するエリア-->
+        <img id="tops" src=" <%- topsImage %> " alt=" <%- topsName %> ">
 
-        <!--アクティビティを表示するエリア-->
-        <img id="activity" src=" <%- activityImage %> " alt=" <%- activityName %> ">
+        <!--ボトムスを表示するエリア-->
+        <img id="bottoms" src=" <%- bottomsImage %> " alt=" <%- bottomsName %> ">
     </div>
     <!-- 謎旅投票ボタン -->
     <%- include('components/tripVoteDialog') %>
