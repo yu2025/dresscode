@@ -24,10 +24,6 @@
         const topsText = document.getElementById("topsText").innerText;
         const bottomsText = document.getElementById("bottomsText").innerText;
         
-        const sameCode = a.filter(function (topsText,bottomsText,self){
-            return self.indexOf(topsText) === bottomsText;
-        });
-        
         const handleGoodButton = () => {
            //謎旅をgoodに投票するAPIを叩く
            const pushMessage = `[${topsText}]で[${bottomsText}]`
@@ -46,5 +42,6 @@
           console.error("something went wrong!");
         }
         
+
      };
 </script>
