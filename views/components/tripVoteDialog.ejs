@@ -34,10 +34,10 @@
            arr.push(`${topsText}と${bottomsText}`);
         
            //reduce関数を用いて重複しているコーデを集計する
-           const sum = arr.reduce(result,current){
+           const sum = arr.reduce(function(result,current){
                console.log('dresscodeは' + current + 'いいね数は' + result);
                return result + current;
-           },0);
+           }),[]);
            
            console.log(sum);
         };
