@@ -32,16 +32,16 @@
            const match = "${topsText}$(bottomsText)"
            //配列にコーデを格納する
            var arr = new Array();
-           arr.push(pushMessage);
+           arr.push(match);
         
            //reduce関数を用いて重複しているコーデを集計する
            const group = arr.reduce((result,current) =>{
-               const element = result.find((p) => p.pushMessage === current.pushMessage);
+               const element = result.find((p) => p.match === current.match);
                if(element){
                   element.count ++;
                }else{
                   result.push({
-                    dresscode: current.pushMessage,
+                    dresscode: current.match,
                     count: 1
                   });
                }
