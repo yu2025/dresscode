@@ -25,6 +25,7 @@
         const bottomsText = document.getElementById("bottomsText").innerText;
         
         const sameCode = a.filter(function (topsText,bottomsText,self){
+            return self.indexOf(topsText) === bottomsText;
         });
         
         const handleGoodButton = () => {
