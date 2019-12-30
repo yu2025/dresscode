@@ -61,7 +61,6 @@
         <!--トップスを表示するエリア-->
         <div id="tops-area">
           <p>TOPS</p>
-          <span id= "topsText"><%- topsName %></span>
           <img id="tops" src=" <%- topsImage %> " alt="<%- topsName %>">
         </div>
 
@@ -71,6 +70,12 @@
           <span id= "bottomsText"><%- bottomsName %></span>
           <img id="bottoms" src=" <%- bottomsImage %> " alt="<%- bottomsName %>">
         </div>
+    </div>
+    
+    <div id="tagarea">
+        <span id= "topsText"><%- topsName %></span>
+        <span>と</span>
+        <span id= "bottomsText"><%- bottomsName %></span>
     </div>
     <!-- 謎旅投票ボタン -->
     <%- include('components/tripVoteDialog') %> 
