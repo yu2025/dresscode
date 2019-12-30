@@ -49,6 +49,17 @@
         text-align:center;
         }
         
+        #topsText{
+        font-size:15px;
+        text-align:center;
+        }
+        
+        #bottomsText{
+        font-size:15px;
+        text-align:center;
+        }
+        
+        
     </style>
 </head>
 <body>
@@ -57,14 +68,14 @@
         <!--トップスを表示するエリア-->
         <div id="tops-area">
           <p>TOPS</p>
-          <span id="topsText">#<%- topsName %></span>
+          <div id="topsText">#<%- topsName %></div>
           <img id="tops" src=" <%- topsImage %> " alt="<%- topsName %>">
         </div>
 
         <!--ボトムスを表示するエリア-->
         <div id="bottoms-area">
           <p>BOTTOMS</p>
-          <span id="bottomsText">#<%- bottomsName %></span>
+          <div id="bottomsText">#<%- bottomsName %></div>
           <img id="bottoms" src=" <%- bottomsImage %> " alt="<%- bottomsName %>">
         </div>
     </div>
