@@ -30,8 +30,23 @@
            //謎旅をgoodに投票するAPIを叩く
            const pushMessage = `[${topsText}]と[${bottomsText}]`
            window.open(`https://scrapbox.io/dresscode/GoodDresscode?body=${pushMessage}`)
-           
-           //配列にコーデを格納する
+        };
+        
+        const handleBadButton = () => {
+           const pushMessage = `[${topsText}]と[${bottomsText}]`
+           window.open(`https://scrapbox.io/dresscode/BadDresscode?body=${pushMessage}`)
+        };
+        
+        if(goodButton && badButton){
+          goodButton.addEventListener('click', handleGoodButton);
+          badButton.addEventListener('click', handleBadButton);
+        } else{
+          console.error("something went wrong!");
+        }
+        
+     };
+     
+     //配列にコーデを格納する
            var arr = new Array();
            arr.push({dresscode : `${topsText}と${bottomsText}`});
            console.log(arr);
@@ -53,20 +68,4 @@
            },[]);
            
            console.log(sum);
-        };
-        
-        const handleBadButton = () => {
-           const pushMessage = `[${topsText}]と[${bottomsText}]`
-           window.open(`https://scrapbox.io/dresscode/BadDresscode?body=${pushMessage}`)
-        };
-        
-        if(goodButton && badButton){
-          goodButton.addEventListener('click', handleGoodButton);
-          badButton.addEventListener('click', handleBadButton);
-        } else{
-          console.error("something went wrong!");
-        }
-        
-       
-     };
 </script>
