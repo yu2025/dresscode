@@ -42,7 +42,11 @@
           console.error("something went wrong!");
         }
         
+        //配列にコーデを格納する
+        var arr = new Array();
+        arr.push(pushMessage);
         
+        //reduce関数を用いて重複しているコーデを集計する
         const group = arr.reduce((result,current) =>{
             const element = result.find((p) => p.pushMessage === current.pushMessage);
             if(element){
