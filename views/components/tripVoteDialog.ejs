@@ -42,6 +42,19 @@
           console.error("something went wrong!");
         }
         
+        
+        const group = arr.reduce((result,current) =>{
+            const element = result.find((p) => p.pushMessage === current.pushMessage);
+            if(element){
+               element.count ++;
+            }else{
+               result.push({
+                 dresscode: current.pushMessage,
+                 count: 1
+               });
+            }
+            return result;
+        }, []);
 
      };
 </script>
