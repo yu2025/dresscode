@@ -26,10 +26,10 @@
         
         const handleGoodButton = () => {
            //謎旅をgoodに投票するAPIを叩く
-           const pushMessage = `[${topsText}]で[${bottomsText}]`
+           const pushMessage = `[${topsText}]と[${bottomsText}]`
            window.open(`https://scrapbox.io/dresscode/GoodDresscode?body=${pushMessage}`)
            
-           const match = "${topsText}$(bottomsText)"
+           const match = `[${topsText}]で[${bottomsText}]`
            console.log(match);
            //配列にコーデを格納する
            var arr = new Array();
@@ -53,7 +53,7 @@
         };
         
         const handleBadButton = () => {
-           const pushMessage = `[${topsText}]で[${bottomsText}]`
+           const pushMessage = `[${topsText}]と[${bottomsText}]`
            window.open(`https://scrapbox.io/dresscode/BadDresscode?body=${pushMessage}`)
         };
         
