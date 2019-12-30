@@ -20,9 +20,10 @@
      window.onload = () =>{
         const goodButton = document.getElementById("goodButton");
         const badButton = document.getElementById("badButton");
-        
+      
         const topsText = document.getElementById("topsText").innerText;
         const bottomsText = document.getElementById("bottomsText").innerText;
+        
         const handleGoodButton = () => {
            //謎旅をgoodに投票するAPIを叩く
            const pushMessage = `[${topsText}で${bottomsText}]`
