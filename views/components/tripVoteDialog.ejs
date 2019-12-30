@@ -44,28 +44,28 @@
           console.error("something went wrong!");
         }
         
-     };
-     
-     //配列にコーデを格納する
-           var arr = new Array();
-           arr.push({dresscode : `${topsText}と${bottomsText}`});
-           console.log(arr);
+        //配列にコーデを格納する
+        var arr = new Array();
+        arr.push({dresscode : `${topsText}と${bottomsText}`});
+        console.log(arr);
         
-           //reduce関数を用いて重複しているコーデを集計する
-           var sum = arr.reduce(function(result,current){
-               var element = result.find(function(p){
-                 return p.dresscode === current.dresscode
-               });
-               if(element){
-                 element.count ++;
-               }else{
-                 result.push({
-                   dresscode: current.dresscode,
-                   count: 1
-                 });
-               }
-               return result;
-           },[]);
-           
-           console.log(sum);
+        //reduce関数を用いて重複しているコーデを集計する
+        var sum = arr.reduce(function(result,current){
+           var element = result.find(function(p){
+               return p.dresscode === current.dresscode
+           });
+           if(element){
+                element.count ++;
+           }else{
+                result.push({
+                dresscode: current.dresscode,
+                count: 1
+           });
+           }
+          return result;
+        },[]);
+            
+        console.log(sum);
+     
+     };
 </script>
