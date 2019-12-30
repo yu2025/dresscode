@@ -32,12 +32,23 @@
            //配列にコーデを格納する
            var arr = new Array();
            arr.push({dresscode : `${topsText}と${bottomsText}`});
+           console.log(arr);
         
            //reduce関数を用いて重複しているコーデを集計する
            var sum = arr.reduce(function(result,current){
-               console.log('dresscodeは' + current + 'いいね数は' + result);
-               return result + current;
-           },0);
+               var element = result.find(function(p)){
+                 return p.dresscode == current.dresscode
+               });
+               if(element){
+                 element.count ++;
+               }else{
+                 result.push({
+                   dresscode:
+                   count: 1
+                 });
+               }
+               return result;
+           },[]);
            
            console.log(sum);
         };
