@@ -36,7 +36,7 @@
         
            //reduce関数を用いて重複しているコーデを集計する
            var sum = arr.reduce(function(result,current){
-               var element = result.find(function(p)){
+               var element = result.find(function(p){
                  return p.dresscode === current.dresscode
                });
                if(element){
