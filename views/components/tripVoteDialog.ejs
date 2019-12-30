@@ -27,12 +27,32 @@
         
         const handleGoodButton = () => {
            //謎旅をgoodに投票するAPIを叩く
-           pushMessage = `[${topsText}]で[${bottomsText}]`
+           const pushMessage = `[${topsText}]で[${bottomsText}]`
            window.open(`https://scrapbox.io/dresscode/GoodDresscode?body=${pushMessage}`)
+           
+           //配列にコーデを格納する
+           var arr = new Array();
+           arr.push(pushMessage);
+        
+           //reduce関数を用いて重複しているコーデを集計する
+           const group = arr.reduce((result,current) =>{
+               const element = result.find((p) => p.pushMessage === current.pushMessage);
+               if(element){
+                  element.count ++;
+               }else{
+                  result.push({
+                    dresscode: current.pushMessage,
+                    count: 1
+                  });
+               }
+               return result;
+           }, []);
+        
+           console.log(group);
         };
         
         const handleBadButton = () => {
-           pushMessage = `[${topsText}]で[${bottomsText}]`
+           const pushMessage = `[${topsText}]で[${bottomsText}]`
            window.open(`https://scrapbox.io/dresscode/BadDresscode?body=${pushMessage}`)
         };
         
@@ -43,24 +63,6 @@
           console.error("something went wrong!");
         }
         
-        //配列にコーデを格納する
-        var arr = new Array();
-        arr.push(pushMessage);
-        
-        //reduce関数を用いて重複しているコーデを集計する
-        const group = arr.reduce((result,current) =>{
-            const element = result.find((p) => p.pushMessage === current.pushMessage);
-            if(element){
-               element.count ++;
-            }else{
-               result.push({
-                 dresscode: current.pushMessage,
-                 count: 1
-               });
-            }
-            return result;
-        }, []);
-        
-        console.log(group);
+       
      };
 </script>
