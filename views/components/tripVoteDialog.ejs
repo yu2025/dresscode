@@ -33,10 +33,7 @@
         
         function handleBadButton(e){
            const pushMessage = `[${topsText}]と[${bottomsText}]`
-           
-           var xhr = new XMLHttpRequest();
-           xhr.open("POST",`https://scrapbox.io/dresscode/BadDresscode?body=${pushMessage}`);
-           xhr.send();
+           window.open(`https://scrapbox.io/dresscode/BadDresscode?body=${pushMessage}`,alwaysLowered=yes)
         }
         
         function handleGoodButton(e){
