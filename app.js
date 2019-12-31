@@ -22,6 +22,13 @@ app.get("/", async (req, res) => {
     });
 });
 
+//画像を保存するページ
+app.get("/collect", async(req, res) =>{
+    res.render('saveImage',{
+        title:"dresscode"
+    });
+});
+
 //謎旅を生成する
 app.get("/api/generate", async (req, res) => {
     /*スクボの全データを取得してくる*/
