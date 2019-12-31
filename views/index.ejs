@@ -52,10 +52,14 @@
 </div>
 
 <script>
-  function(){
+  const finishButton = document.getElementById('finishButton');
+  finishButton.addEventListener('click',handleFinishButton);
+  
+  function handleFinishButton(){
      var elm = document.getElementById('changeText');
      elm.textContent = 'ご協力ありがとうございました';
   }
+  
 </script>
 
 </body>
