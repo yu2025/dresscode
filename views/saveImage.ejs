@@ -33,7 +33,7 @@
  //styleをつけたいのでclassを付ける
  imgElement.classList.add("images");
  //ファイルを読み込む
- imgElement.readAsDataURL(item);
+ fileReader.readAsDataURL(item);
  //読み込みが完了した場合
  filereader.onload = event =>{
  //読み込んだ画像を先ほど生成したimg要素のsrcに指定
