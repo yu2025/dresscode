@@ -4,8 +4,6 @@
     <title> <%= title %> </title>
 
     <style>
-        #main_container {
-        }
 
         #tops {
             width: 276px;
@@ -60,7 +58,6 @@
     </style>
 </head>
 <body>
-<div id="main_container">
     <div class="imagearea">
         <!--トップスを表示するエリア-->
         <div id="tops-area">
@@ -83,6 +80,8 @@
     <!-- 謎旅投票ボタン -->
     <%- include('components/tripVoteDialog') %> 
     
-</div>
+    //ドレスコード判定を終了する
+    <input id="finishButton" type="submit" value="判定を終了する" onclick="location.href='./index.html'">
+    
 </body>
 </html>
