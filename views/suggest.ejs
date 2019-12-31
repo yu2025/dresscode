@@ -81,7 +81,9 @@
     <%- include('components/tripVoteDialog') %> 
     
     //ドレスコード判定を終了する
-    <input id="finishButton" type="submit" value="判定を終了する" onclick="location.href='./index.html'">
+    <form method="GET" action="https://dresscodesfc.herokuapp.com/">
+    <input id="finishButton" type="submit" value="判定を終了する">
+    </form>
     
 </body>
 </html>
