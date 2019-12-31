@@ -31,7 +31,6 @@
            const pushMessage = `[${topsText}]と[${bottomsText}]`
            //location.fref = `https://scrapbox.io/dresscode/GoodDresscode?body=${pushMessage}`;
            window.open(`https://scrapbox.io/dresscode/GoodDresscode?body=${pushMessage}`)
-           return false;
         };
         
         const handleBadButton = () => {
@@ -40,7 +39,9 @@
         };
         
         if(goodButton && badButton){
-          goodButton.addEventListener('click', handleGoodButton);
+          goodButton.addEventListener('click', function(handleGoodButton){
+          event.preventDefault();
+          });
           badButton.addEventListener('click', handleBadButton);
         } else{
           console.error("something went wrong!");
