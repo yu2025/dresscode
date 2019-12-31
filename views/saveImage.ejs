@@ -47,7 +47,7 @@
  fileReader.onload = event =>{
  //読み込んだ画像を先ほど生成したimg要素のsrcに指定
  imgElement.src = event.target.result;
- pushImage = '${imgElement}';
+ pushImage = 'event.target.result';
  //生成したimg要素を追加
  imgFrame.appendChild(imgElement);
  };
