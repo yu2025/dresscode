@@ -25,21 +25,19 @@
       
         const topsText = document.getElementById("topsText").innerText;
         const bottomsText = document.getElementById("bottomsText").innerText;
-      
         
-        goodButton.addEventListener('click', function(){
-          const pushMessage = `[${topsText}]と[${bottomsText}]`
-          
-          var XHR = new XMLHttpRequest();
-          XHR.open("POST",`https://scrapbox.io/dresscode/GoodDresscode?body=${pushMessage}`,true);
-        },false);
-        
-        badButton.addEventListener('click', handleBadButton,{passive: false});
+        badButton.addEventListener('click', handleBadButton);
+        goodButton.addEventListener('click', handleGoodButton);
         
         function handleBadButton(e){
            const pushMessage = `[${topsText}]と[${bottomsText}]`
-           e.preventDefault();
-           window.open(`https://scrapbox.io/dresscode/BadDresscode?body=${pushMessage}`)
+           window.location.href = `https://scrapbox.io/dresscode/BadDresscode?body=${pushMessage}`
+           //window.open(`https://scrapbox.io/dresscode/BadDresscode?body=${pushMessage}`)
+        }
+        
+        function handleGoodButton(e){
+           const pushMessage = `[${topsText}]と[${bottomsText}]`
+           window.open(`https://scrapbox.io/dresscode/GoodDresscode?body=${pushMessage}`)
         }
         
         //配列にコーデを格納する
