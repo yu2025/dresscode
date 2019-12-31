@@ -31,14 +31,14 @@
         badButton.addEventListener('click', handleBadButton);
         goodButton.addEventListener('click', handleGoodButton);
         
-        function handleBadButton(e){
+        function handleBadButton(){
            const pushMessage = `[${topsText}]と[${bottomsText}]`
            window.open(`https://scrapbox.io/dresscode/BadDresscode?body=${pushMessage}`,`alwaysLowered=yes`)
         }
         
-        function handleGoodButton(e){
+        function handleGoodButton(){
            const pushMessage = `[${topsText}]と[${bottomsText}]`
-           window.open(`https://scrapbox.io/dresscode/GoodDresscode?body=${pushMessage}`)
+           window.open(`https://scrapbox.io/dresscode/GoodDresscode?body=${pushMessage}`,`alwaysLowered=yes`)
         }
         
         //配列にコーデを格納する
