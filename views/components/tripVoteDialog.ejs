@@ -25,14 +25,7 @@
       
         const topsText = document.getElementById("topsText").innerText;
         const bottomsText = document.getElementById("bottomsText").innerText;
-        
-        
-        
-        const handleBadButton = (e) => {
-           const pushMessage = `[${topsText}]と[${bottomsText}]`
-           window.open(`https://scrapbox.io/dresscode/BadDresscode?body=${pushMessage}`)
-           e.preventDefault();
-        };
+      
         
         goodButton.addEventListener('click', function(event){
           const pushMessage = `[${topsText}]と[${bottomsText}]`
@@ -40,10 +33,12 @@
           event.preventDefault();
         }, false);
         
-        if(badButton){
-          badButton.addEventListener('click', handleBadButton,{passive: false});
-        } else{
-          console.error("something went wrong!");
+        badButton.addEventListener('click', handleBadButton,{passive: false});
+        
+        function handleBadButton(e){
+           const pushMessage = `[${topsText}]と[${bottomsText}]`
+           window.open(`https://scrapbox.io/dresscode/BadDresscode?body=${pushMessage}`)
+           e.preventDefault();
         }
         
         //配列にコーデを格納する
