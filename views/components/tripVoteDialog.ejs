@@ -33,12 +33,13 @@
            window.open(`https://scrapbox.io/dresscode/BadDresscode?body=${pushMessage}`)
         };
         
-        if(goodButton && badButton){
-          goodButton.addEventListener('click', function(event){
+        goodButton.addEventListener('click', function(event){
           const pushMessage = `[${topsText}]と[${bottomsText}]`
           window.open(`https://scrapbox.io/dresscode/GoodDresscode?body=${pushMessage}`)
           event.preventDefault();
-          });
+        });
+         
+        if(badButton){
           badButton.addEventListener('click', handleBadButton);
         } else{
           console.error("something went wrong!");
