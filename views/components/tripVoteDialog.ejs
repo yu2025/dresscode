@@ -27,11 +27,12 @@
         const bottomsText = document.getElementById("bottomsText").innerText;
       
         
-        goodButton.addEventListener('click', function(event){
+        goodButton.addEventListener('click', function(){
           const pushMessage = `[${topsText}]と[${bottomsText}]`
-          window.open(`https://scrapbox.io/dresscode/GoodDresscode?body=${pushMessage}`)
-          event.preventDefault();
-        }, false);
+          
+          var XHR = new XMLHttpRequest();
+          XHR.open("POST",`https://scrapbox.io/dresscode/GoodDresscode?body=${pushMessage}`,true);
+        },false);
         
         badButton.addEventListener('click', handleBadButton,{passive: false});
         
