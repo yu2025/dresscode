@@ -5,15 +5,73 @@
 </head>
 
 <body>
+ <%- include('components/hamburgerMenu.ejs') %>
  <div id="main">
    <h3>服を保存しよう</h3>
    <p>自分の服を保存してみてください！<br>保存することで、コーディネート判定をさせることができます</p>
+   <div id="app"></div>
+   <input type="file" id="imgButton" multiple="true" />
+   <div class="frame">
+      <div id="imgFrame"></div>
+   </div>
  </div>
  
+ <script>
+ const imgButton = document.getElementById("imgButton");
+ const imgFrame = document.getElementById("imgFrame");
+ const fileReader = new FileReader();
+ imgButton.addEventListener("change", changeHandler);
+ 
+ function changeHandler(event){
+ const fileList = event.target.files;
+ 
+ Array.from(fileList).forEach((item,index) =>{
+ //img要素を新しく生成
+ const imgElement = document.creatElement("img");
+ //一意なidをつけておく
+ imgElement.id = item.name;
+ //styleをつけたいのでclassを付ける
+ imgElement.classList.add("images");
+ //ファイルを読み込む
+ imgElement.readAsDataURL(item);
+ //読み込みが完了した場合
+ filereader.onload = event =>{
+ //読み込んだ画像を先ほど生成したimg要素のsrcに指定
+ imgElement.src = event.target.result;
+ //生成したimg要素を追加
+ imgFrame.appendChild(imgElement);
+ }
+ })
+ }
+ </sctipt>
+ 
  <style>
+ .images{
+ max-width:276px;
+ max-height:368px;
+ }
+ 
+ #imgFrame{
+ position:absolute;
+ left:50%;
+ transform:translate(-50%,0);
+ }
+ 
+ 
+ .frame{
+ width:276px;
+ height:368px;
+ position:relative;
+ border:1px #aaa dashed;
+ background:#fff;
+ left:50%;
+ transform:translate(-50%,10%);
+ }
+ 
  #main{
  margin-top:50px;
  }
+ 
  #main > h3{
  color:#212121;
  text-align:center;
