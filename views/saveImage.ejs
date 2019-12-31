@@ -9,9 +9,11 @@
  <div id="main">
    <h3>服を保存しよう</h3>
    <p>自分の服を保存してみてください！<br>保存することで、コーディネート判定をさせることができます</p>
+   <div id="img-area">
    <input type="file" id="imgButton" multiple="true" />
    <div class="frame">
       <div id="imgFrame"></div>
+   </div>
    </div>
  </div>
  
@@ -61,6 +63,10 @@
  position:absolute;
  left:50%;
  transform:translate(-50%,-50%);
+ }
+ 
+ #img-area{
+ margin-top:50px;
  }
  
  .frame{
