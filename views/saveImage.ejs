@@ -48,6 +48,7 @@
  //読み込んだ画像を先ほど生成したimg要素のsrcに指定
  imgElement.src = event.target.result;
  pushImage = event.target.result;
+ console.log(pushImage);
  //生成したimg要素を追加
  imgFrame.appendChild(imgElement);
  };
@@ -55,7 +56,7 @@
  }
  
  function saveHandler(){
- window.open(`https://scrapbox.io/dresscode/BadDresscode?body=${pushImage}`)
+ //window.open(`https://scrapbox.io/dresscode/BadDresscode?body=${pushImage}`)
  }
  
  
