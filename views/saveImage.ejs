@@ -28,6 +28,8 @@
  //img要素を新しく生成
  const imgElement = document.createElement("img");
  
+ var pushImage;
+ 
  saveButton.addEventListener("click",saveHandler);
  imgButton.addEventListener("change", changeHandler);
  
@@ -45,16 +47,16 @@
  fileReader.onload = event =>{
  //読み込んだ画像を先ほど生成したimg要素のsrcに指定
  imgElement.src = event.target.result;
- function saveHandler(){
- const pushImage = '${imgElement.src}'
- window.open(`https://scrapbox.io/dresscode/BadDresscode?body=${pushImage}`)
- }
+ pushImage = '${imgElement}';
  //生成したimg要素を追加
  imgFrame.appendChild(imgElement);
  };
  });
  }
  
+ function saveHandler(){
+ window.open(`https://scrapbox.io/dresscode/BadDresscode?body=${pushImage}`)
+ }
  
  
  </script>
