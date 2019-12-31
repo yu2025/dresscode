@@ -41,7 +41,7 @@
 </div>
 <div id="main_container">
     <h3>ドレスコードの判定をしよう</h3>
-    <p>
+    <p id="changeText">
     ドレスコードといってもフォーマル、セミフォーマルなど様々な種類があります<br>
     その中でも、オフィスカジュアルやビジネスアタイアは就活生や社会人に多く求められるドレスコードではないでしょうか？
     いざ、そのようなドレスコードを求められた際、困惑する人は多いと思います<br>
@@ -50,5 +50,13 @@
     </p>
     <%- include('components/tripGenerateButton') %>
 </div>
+
+<script>
+  function(){
+     var elm = document.getElementById('changeText');
+     elm.textContent = 'ご協力ありがとうございました';
+  }
+</script>
+
 </body>
 </html>
