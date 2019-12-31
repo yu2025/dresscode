@@ -29,8 +29,9 @@
         const handleGoodButton = () => {
            //謎旅をgoodに投票するAPIを叩く
            const pushMessage = `[${topsText}]と[${bottomsText}]`
-           location.fref = `https://scrapbox.io/dresscode/GoodDresscode?body=${pushMessage}`;
-           //window.open(`https://scrapbox.io/dresscode/GoodDresscode?body=${pushMessage}`)
+           //location.fref = `https://scrapbox.io/dresscode/GoodDresscode?body=${pushMessage}`;
+           window.open(`https://scrapbox.io/dresscode/GoodDresscode?body=${pushMessage}`)
+           return false;
         };
         
         const handleBadButton = () => {
