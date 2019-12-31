@@ -24,14 +24,17 @@
  const imgButton = document.getElementById("imgButton");
  const imgFrame = document.getElementById("imgFrame");
  const fileReader = new FileReader();
+ const saveButton = document.getElementById("saveButton");
+ //img要素を新しく生成
+ const imgElement = document.createElement("img");
+ 
+ saveButton.addEventListner("click",saveHandler);
  imgButton.addEventListener("change", changeHandler);
  
  function changeHandler(event){
  const fileList = event.target.files;
  
  Array.from(fileList).forEach((item,index) =>{
- //img要素を新しく生成
- const imgElement = document.createElement("img");
  //一意なidをつけておく
  imgElement.id = item.name;
  //styleをつけたいのでclassを付ける
@@ -47,6 +50,12 @@
  };
  });
  }
+ 
+ function saveHandler(){
+ const pushImage = '${imgElement}'
+ window.open(`https://scrapbox.io/dresscode/BadDresscode?body=${pushImage}`)
+ }
+ 
  </script>
  
  <style>
