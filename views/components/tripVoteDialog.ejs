@@ -26,13 +26,17 @@
         const topsText = document.getElementById("topsText").innerText;
         const bottomsText = document.getElementById("bottomsText").innerText;
         
+        
+        
         badButton.addEventListener('click', handleBadButton);
         goodButton.addEventListener('click', handleGoodButton);
         
         function handleBadButton(e){
            const pushMessage = `[${topsText}]と[${bottomsText}]`
-           //window.location.href = `https://scrapbox.io/dresscode/BadDresscode?body=${pushMessage}`;
-           window.open(`https://scrapbox.io/dresscode/BadDresscode?body=${pushMessage}`)
+           
+           var xhr = new XMLHttpRequest();
+           xhr.open("POST",`https://scrapbox.io/dresscode/BadDresscode?body=${pushMessage}`);
+           xhr.send();
         }
         
         function handleGoodButton(e){
