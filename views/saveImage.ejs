@@ -55,7 +55,7 @@
  console.log(base64);
  fileData = base64.replace(/^data:\w+\/\w+;base64,/, '');
  console.log(fileData);
- var decode = atob(fileData);
+ var decode = decodeURIComponent(atob(fileData));
  console.log(decode);
  //生成したimg要素を追加
  imgFrame.appendChild(imgElement);
