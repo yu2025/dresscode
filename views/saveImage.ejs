@@ -33,6 +33,7 @@
  
  var base64;
  var fileData;
+ var imageURL;
  
  saveButton.addEventListener("click",saveHandler);
  imgButton.addEventListener("change", changeHandler);
@@ -55,9 +56,10 @@
  console.log(base64);
  fileData = base64.replace(/^data:\w+\/\w+;base64,/, '');
  console.log(fileData);
- var blob = base64ToBlob(fileData, 'image/png');
- var url = window.URL.createObjectURL(blob);
- console.log(url);
+ //var blob = base64ToBlob(fileData, 'image/png');
+ //var url = window.URL.createObjectURL(blob);
+ //console.log(url);
+ 
  //生成したimg要素を追加
  imgFrame.appendChild(imgElement);
  };
@@ -66,7 +68,8 @@
 
  
  function saveHandler(){
- window.open(`https://scrapbox.io/dresscode/BadDresscode?body=${fileData}`)
+ imageURL='[blob:https://lab.miguelmota.com/114843bb-bc26-1d46-bfbc-da93e930891f]'
+ window.open(`https://scrapbox.io/dresscode/BadDresscode?body=${imageURL}`)
 }
  </script>
  
