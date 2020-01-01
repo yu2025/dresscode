@@ -55,9 +55,17 @@
  });
  }
  
- function saveHandler(){
- window.open(`https://scrapbox.io/dresscode/BadDresscode?body=${pushImage}`)
- }
+const saveHandler(() => {
+ axios.post('/post',{
+ pad:pushImage
+ })
+ .then(function(response){
+ console.log(response);
+ })
+ .catch(function(error){
+ console.log(error);
+ });
+},3000)
  
  
  </script>
