@@ -52,7 +52,7 @@
  imgElement.src = event.target.result;
  base64 = event.target.result;
  console.log(base64);
- const fileData = encodedData.replace(/^data:\w+\/\w+;base64,/, '');
+ const fileData = base64.replace(/^data:\w+\/\w+;base64,/, '');
  console.log(fileData);
  
  //var decode = window.atob(base64);
