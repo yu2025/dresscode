@@ -5,10 +5,10 @@
 </head>
 
 <body>
-<form action="/api/generate" method="get">
-<input type="submit" value="ドレスコード判定" id="generator">
+<%- include('components/tripGenerateButton') %>
+
 <select name="cloths">
-  <option value="tops"><%- topsName %></option>
+  <option value="tops">トップス</option>
   <option value="bottoms">ボトムス</option>
 </select>
 </form>
