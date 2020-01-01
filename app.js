@@ -29,6 +29,13 @@ app.get("/collect", async(req, res) =>{
     });
 });
 
+//服を判定するページ
+app.get("/judgement" async(req,res)=>{
+    res.render('search',{
+        title:"dresscode"
+    });
+});
+
 //謎旅を生成する
 app.get("/api/generate", async (req, res) => {
     /*スクボの全データを取得してくる*/
