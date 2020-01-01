@@ -32,6 +32,7 @@
  const imgElement = document.createElement("img");
  
  var base64;
+ var fileData;
  
  saveButton.addEventListener("click",saveHandler);
  imgButton.addEventListener("change", changeHandler);
@@ -52,10 +53,10 @@
  imgElement.src = event.target.result;
  base64 = event.target.result;
  console.log(base64);
- const fileData = base64.replace(/^data:\w+\/\w+;base64,/, '');
+ fileData = base64.replace(/^data:\w+\/\w+;base64,/, '');
  console.log(fileData);
- var decode = window.atob(fileData);
- console.log(decode);
+ //var decode = window.atob(fileData);
+ //console.log(decode);
  //生成したimg要素を追加
  imgFrame.appendChild(imgElement);
  };
