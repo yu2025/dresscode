@@ -37,15 +37,9 @@ app.get("/judgement",async(req,res)=>{
     const tops = scrapboxData.pages.filter(page => page.descriptions.includes("#tops"));
     /*"#activity"タグのついた記事を抽出して配列に格納*/
     const bottoms = scrapboxData.pages.filter(page => page.descriptions.includes("#bottoms"));
-
     
     res.render('search',{
         title:"dresscode",
-        //for文を用いて、配列に格納されたものを全て取ってくる
-        topsName: tops.title,
-        topsImage: tops.image,
-        bottomsName: bottoms.title,
-        bottomsImage: bottoms.image
     });
 });
 
