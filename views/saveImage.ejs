@@ -54,10 +54,18 @@
  imgElement.src = event.target.result;
  base64 = event.target.result;
  console.log(base64);
- fileData = base64.replace(/^data:\w+\/\w+;base64,/, '');
- console.log(fileData);
- var buffer = Buffer.from(fileData, 'base64');
- console.log(buffer);
+ //fileData = base64.replace(/^data:\w+\/\w+;base64,/, '');
+ //console.log(fileData);
+ var png = base64.split(',')[1];
+ var the_file = new Blob([window.atob(png)],  {type: 'image/png', encoding: 'utf-8'});
+ var fr = new FileReader();
+ fr.onload = function ( oFREvent ) {
+    var v = oFREvent.target.result.split(',')[1]; // encoding is messed up here, so we fix it
+    v = atob(v);
+    var good_b64 = btoa(decodeURIComponent(escape(v)));
+    document.getElementById("uploadPreview").src = "data:image/png;base64," + good_b64;
+};
+fr.readAsDataURL(the_file);
  //console.log(url);
  
  //生成したimg要素を追加
