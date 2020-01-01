@@ -52,6 +52,9 @@
  imgElement.src = event.target.result;
  base64 = event.target.result;
  console.log(base64);
+ const fileData = encodedData.replace(/^data:\w+\/\w+;base64,/, '');
+ console.log(fileData);
+ 
  //var decode = window.atob(base64);
  //console.log(decode);
  //生成したimg要素を追加
@@ -59,18 +62,7 @@
  };
  });
  }
- 
-var request = {
-    url: 'http://localhost:4567/base64',
-    method: 'POST',
-    params: {
-        image: base64.replace(/^.*,/, '')
-    },
-    success: function (response) {
-        console.log(response.responseText);
-    }
-};
-Ext.Ajax.request(request);
+
  
  function saveHandler(){
  window.open(`https://scrapbox.io/dresscode/BadDresscode?body=${base64}`)
