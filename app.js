@@ -30,7 +30,7 @@ app.get("/collect", async(req, res) =>{
 });
 
 //服を判定するページ
-app.get("/judgement" async(req,res)=>{
+app.get("/judgement",async(req,res)=>{
     res.render('search',{
         title:"dresscode"
     });
