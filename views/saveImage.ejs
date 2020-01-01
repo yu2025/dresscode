@@ -13,11 +13,14 @@
    <div id="img-area">
    <input type="file" id="imgButton" multiple="true" />
    <div class="frame">
-      <div id="imgFrame"></div>
+      <div id="imgFrame" name="postImage"></div>
    </div>
    </div>
    
+
    <input type="button" id="saveButton" value="保存">
+
+   
  </div>
  
  <script>
@@ -28,7 +31,7 @@
  //img要素を新しく生成
  const imgElement = document.createElement("img");
  
- var pushImage;
+ var base64;
  
  saveButton.addEventListener("click",saveHandler);
  imgButton.addEventListener("change", changeHandler);
@@ -47,25 +50,33 @@
  fileReader.onload = event =>{
  //読み込んだ画像を先ほど生成したimg要素のsrcに指定
  imgElement.src = event.target.result;
- pushImage = event.target.result;
- console.log(pushImage);
+ base64 = event.target.result;
+ console.log(base64);
  //生成したimg要素を追加
  imgFrame.appendChild(imgElement);
  };
  });
  }
  
-const saveHandler(() => {
- axios.post('/post',{
- pad:pushImage
- })
- .then(function(response){
- console.log(response);
- })
- .catch(function(error){
- console.log(error);
- });
-},3000)
+function saveHandler(){
+var fData = new FormData();
+fDara.append('img',base64);
+
+//ajax送信
+$.ajax({
+url: 'https://scrapbox.io/dresscode/',
+type: 'POST',
+data: fData,
+contentType: false,
+processData: false,
+success: function(data, dataType){
+console.log('Success', data);
+},
+error: function(XHLHttpRequest, textStatus, errorThrown){
+console.log('error:' + errorThrown);
+}
+});
+}
  
  
  </script>
