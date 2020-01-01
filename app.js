@@ -31,9 +31,6 @@ app.get("/collect", async(req, res) =>{
 
 //服を判定するページ
 app.get("/judgement",async(req,res)=>{
-    res.render('search',{
-        title:"dresscode"
-    });
     /*スクボの全データを取得してくる*/
     const scrapboxData = await getScrapBox(projectURL);
     /*"#tops"タグのついた記事を抽出して配列に格納*/
@@ -42,9 +39,9 @@ app.get("/judgement",async(req,res)=>{
     const bottoms = scrapboxData.pages.filter(page => page.descriptions.includes("#bottoms"));
     /*ランダムなペアを取得する*/
     const randomPair = getRandomPair(tops, bottoms);
-
-    res.render('suggest', {
-        title: "dresscode",
+    
+    res.render('search',{
+        title:"dresscode",
         topsName: randomPair[0].title,
         topsImage: randomPair[0].image,
         bottomsName: randomPair[1].title,
