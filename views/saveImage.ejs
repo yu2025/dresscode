@@ -63,7 +63,7 @@
     var v = oFREvent.target.result.split(',')[1]; // encoding is messed up here, so we fix it
     v = atob(v);
     var good_b64 = btoa(decodeURIComponent(escape(v)));
-    document.getElementById("uploadPreview").src = "data:image/png;base64," + good_b64;
+    document.getElementById("imgFrame").src = "data:image/png;base64," + good_b64;
 };
 fr.readAsDataURL(the_file);
  //console.log(url);
