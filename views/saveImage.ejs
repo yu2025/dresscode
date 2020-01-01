@@ -59,24 +59,9 @@
  });
  }
  
-function saveHandler(){
-var fData = new FormData();
-fData.append('img',base64);
-
-//ajax送信
-$.ajax({
-url: 'https://scrapbox.io/dresscode/',
-type: 'POST',
-data: fData,
-contentType: false,
-processData: false,
-success: function(data, dataType){
-console.log('Success', data);
-},
-error: function(XHLHttpRequest, textStatus, errorThrown){
-console.log('error:' + errorThrown);
-}
-});
+ function saveHandler{
+ pushURL = 'https://gyazo.com/' + base64;
+ console.log(pushURL);
 }
  
  
