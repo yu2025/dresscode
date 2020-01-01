@@ -42,7 +42,7 @@ app.get("/judgement",async(req,res)=>{
     res.render('search',{
         title:"dresscode",
         //for文を用いて、配列に格納されたものを全て取ってくる
-        topsName: tops[0].title,
+        topsName: tops.title,
         topsImage: tops.image,
         bottomsName: bottoms.title,
         bottomsImage: bottoms.image
