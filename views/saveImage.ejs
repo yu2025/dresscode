@@ -50,9 +50,9 @@
  //読み込んだ画像を先ほど生成したimg要素のsrcに指定
  imgElement.src = event.target.result;
  base64 = event.target.result;
+ console.log(base64);
  const decode = atob(base64);
  console.log(decode);
- console.log(base64);
  //生成したimg要素を追加
  imgFrame.appendChild(imgElement);
  };
