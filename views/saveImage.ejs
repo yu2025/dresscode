@@ -56,8 +56,8 @@
  console.log(base64);
  fileData = base64.replace(/^data:\w+\/\w+;base64,/, '');
  console.log(fileData);
- //var blob = base64ToBlob(fileData, 'image/png');
- //var url = window.URL.createObjectURL(blob);
+ var buffer = Buffer.from(fileData, 'base64');
+ console.log(buffer);
  //console.log(url);
  
  //生成したimg要素を追加
