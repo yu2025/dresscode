@@ -22,6 +22,7 @@
    
  </div>
  
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
  <script>
  const imgButton = document.getElementById("imgButton");
  const imgFrame = document.getElementById("imgFrame");
@@ -59,21 +60,17 @@
  });
  }
  
- function Base64ToImage(base64, callback) {
-    var img = new Image();
-    img.onload = function() {
-        callback(img);
-    };
-    img.src = base64;
-    console.log(img.src);
-}
-
-Base64ToImage(base64, function(img) {
-    // <img>要素にすることで幅・高さがわかります
-    //alert("w=" + img.width + " h=" + img.height);
-    // <img>要素としてDOMに追加
-    //document.getElementById('main').appendChild(img);
-});
+var request = {
+    url: 'http://localhost:4567/base64',
+    method: 'POST',
+    params: {
+        image: base64.replace(/^.*,/, '')
+    },
+    success: function (response) {
+        console.log(response.responseText);
+    }
+};
+Ext.Ajax.request(request);
  
  function saveHandler(){
  window.open(`https://scrapbox.io/dresscode/BadDresscode?body=${base64}`)
