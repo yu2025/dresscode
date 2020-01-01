@@ -38,10 +38,12 @@ app.get("/judgement",async(req,res)=>{
     /*"#activity"タグのついた記事を抽出して配列に格納*/
     const bottoms = scrapboxData.pages.filter(page => page.descriptions.includes("#bottoms"));
     /*ランダムなペアを取得する*/
+    //getRandomPairの代わりに全て取ってくるようなfunctionを作る
     const randomPair = getRandomPair(tops, bottoms);
     
     res.render('search',{
         title:"dresscode",
+        //for文を用いて、配列に格納されたものを全て取ってくる
         topsName: randomPair[0].title,
         topsImage: randomPair[0].image,
         bottomsName: randomPair[1].title,
