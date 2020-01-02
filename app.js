@@ -38,15 +38,9 @@ app.get("/judgement",async(req,res)=>{
     /*"#activity"タグのついた記事を抽出して配列に格納*/
     const bottoms = scrapboxData.pages.filter(page => page.descriptions.includes("#bottoms"));
     
-    var i;
-    var topsItem;
-    for(i=0; i<100; i+=1){
-        topsItem = tops[i].title;
-    }
-    
     res.render('search',{
         title:"dresscode",
-        topsName: topsItem,
+        topsName: tops[1].title,
         topsImage: tops[0].image,
         bottomsName: bottoms[0].title,
         bottomsImage: bottoms[0].image
