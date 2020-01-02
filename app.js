@@ -31,13 +31,6 @@ app.get("/collect", async(req, res) =>{
 
 //服を判定するページ
 app.get("/judgement",async(req,res)=>{
-    /*スクボの全データを取得してくる*/
-    const scrapboxData = await getScrapBox(projectURL);
-    /*"#tops"タグのついた記事を抽出して配列に格納*/
-    const tops = scrapboxData.pages.filter(page => page.descriptions.includes("#tops"));
-    /*"#activity"タグのついた記事を抽出して配列に格納*/
-    const bottoms = scrapboxData.pages.filter(page => page.descriptions.includes("#bottoms"));
-    
     res.render('search',{
         title:"dresscode",
     });
