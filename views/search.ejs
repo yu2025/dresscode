@@ -12,9 +12,24 @@
 <option id="<%- topsName_1 %>"><%- topsName_1 %></option>
 </select>
 
+<select id="bottoms_selected">
+<option id="<%- bottomsName %>"><%- bottomsName %></option>
+</select>
 
+<p><%- baddress %></p>
+<input type="button" value="判定する" id="judge">
 
-<input type="button" value="判定する">
+<script>
+const judgeCode = document.getElementById("judge");
+const selectedItemT = document.getElementById("tops_selected").innerHTML;
+const selectedItemB = document.getElementById("bottoms_selected").innerHTML;
+judge.addEvenetListener("click",judgeHandler);
+
+function judgeHandler(){
+ if('[${selectedItemT}]と[${selectedItemB}]' == ${baddress})
+}
+
+</script>
 
 <!--
  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
