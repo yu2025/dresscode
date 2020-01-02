@@ -21,8 +21,9 @@
 
 <script>
 const judge = document.getElementById("judge");
-const selectedItemT = document.getElementById("tops_selected").innerText;
-const selectedItemB = document.getElementById("bottoms_selected").innerText;
+const selectedItemT = document.getElementById("tops_selected").value;
+console.log(selectedItemT);
+const selectedItemB = document.getElementById("bottoms_selected").value;
 const baddress = document.getElementById("baddress").innerHTML;
 
 judge.addEventListener('click', judgeHandler);
