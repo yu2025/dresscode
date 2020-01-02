@@ -8,7 +8,9 @@
 <%- include('components/tripGenerateButton') %>
 
 <select name="cloths">
-  <option value="tops">${topsName}</option>
+　<span id="topsName">
+  <option value="topsTitle"></option>
+  </span>
   <option value="bottoms">ボトムス</option>
 </select>
 </form>
@@ -24,7 +26,8 @@ const tops = scrapboxData.pages.filter(page => page.descriptions.includes("#tops
 /*"#activity"タグのついた記事を抽出して配列に格納*/
 const bottoms = scrapboxData.pages.filter(page => page.descriptions.includes("#bottoms"));
 
-const topsName = tops[0].title;
+const topsName = document.getElementById("topsTitle");
+topsName.innerHTML = tops[0].title;
 </script>
 
 </body>
