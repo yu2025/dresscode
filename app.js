@@ -64,7 +64,7 @@ app.get("/api/generate", async (req, res) => {
 
     res.render('suggest', {
         title: "dresscode",
-        topsName: randomPair[0].header,
+        topsName: randomPair[0].title,
         topsImage: randomPair[0].image,
         bottomsName: randomPair[1].title,
         bottomsImage: randomPair[1].image
