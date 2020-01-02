@@ -32,8 +32,9 @@
         goodButton.addEventListener('click', handleGoodButton);
         
         function handleBadButton(){
-           const pushMessage = `[${topsText}]と[${bottomsText}]`
-           window.open(`https://scrapbox.io/dresscode/${pushMessage}`,`alwaysLowered=yes`)
+           const pushMessage = `${topsText}と${bottomsText}`
+           const tag = '#BadDresscode'
+           window.open(`https://scrapbox.io/dresscode/${pushMessage}?body=${tag}`,`alwaysLowered=yes`)
         }
         
         function handleGoodButton(){
