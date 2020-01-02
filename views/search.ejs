@@ -5,10 +5,22 @@
 </head>
 
 <body>
+<%
+for( var i in hoges ) {　%>
+<%= hoges[i].huga%><br />
+<%  
+}
+%>
+
 
 <form>
 <select>
- <option id="<%- topsName_0 %>"><%- topsName_0 %></option>
+ <option id="">
+ <% for(var i in topsName){ %>
+ <%= topsName[i] %><br/>
+ <% } %>
+ </option>
+ 
  <option id="<%- topsName_1 %>"><%- topsName_1 %></option>
 </select>
 </form>
