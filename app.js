@@ -42,8 +42,8 @@ app.get("/judgement",async(req,res)=>{
         title:"dresscode",
         topsName: tops[0].title,
         topsImage: tops[0].image,
-        bottomsName: bottoms[1].title,
-        bottomsImage: bottoms[1].image
+        bottomsName: bottoms[0].title,
+        bottomsImage: bottoms[0].image
     });
 });
 
