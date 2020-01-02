@@ -11,9 +11,10 @@
 <script>
 const getScrapBox = require("./utils/getScrapBox");
 const getRandomPair = require("./utils/getRandomPair");
+const projectURL = process.env.PROJECT_URL || "dresscode";
 
 /*スクボの全データを取得してくる*/
-const scrapboxData = await getScrapBox(projectURL);
+const scrapboxData = getScrapBox(projectURL);
 /*"#tops"タグのついた記事を抽出して配列に格納*/
 const tops = scrapboxData.pages.filter(page => page.descriptions.includes("#tops"));
 
