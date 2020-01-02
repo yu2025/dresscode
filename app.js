@@ -42,7 +42,7 @@ app.get("/judgement",async(req,res)=>{
     
     res.render('search',{
         title:"dresscode",
-        baddress: baddresscode[1],
+        baddress: baddresscode[1].body,
         topsName_0: tops[0].title,
         topsName_1: tops[1].title,
         topsImage: tops[0].image,
@@ -64,7 +64,7 @@ app.get("/api/generate", async (req, res) => {
 
     res.render('suggest', {
         title: "dresscode",
-        topsName: randomPair[0].title,
+        topsName: randomPair[0].header,
         topsImage: randomPair[0].image,
         bottomsName: randomPair[1].title,
         bottomsImage: randomPair[1].image
