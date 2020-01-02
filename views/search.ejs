@@ -8,16 +8,7 @@
 
 <form>
 <select>
-<script>
-
-//tops[i].titleの形にしたい
-var i;
-
-for(i=0; i<100; i+=1){
-document.write('<option value="'+ <%- tops %>[i].title +'"> '+ tops[i].title +' </option>');
-}
-
-</script>
+ <option id="<%- topsName %>"><%- topsName %></option>
 </select>
 </form>
 
