@@ -38,11 +38,11 @@ app.get("/judgement",async(req,res)=>{
     /*"#activity"タグのついた記事を抽出して配列に格納*/
     const bottoms = scrapboxData.pages.filter(page => page.descriptions.includes("#bottoms"));
     /*"#baddresscode"タグのついた記事を抽出して配列に格納*/
-    const baddresscode = scrapboxData.pages.filter(page => page.descriptions.includes("##BadDresscode"));
+    const baddresscode = scrapboxData.pages.filter(page => page.descriptions.includes("#BadDresscode"));
     
     res.render('search',{
         title:"dresscode",
-        baddress: baddresscode[0].body,
+        baddress: baddresscode[0].title,
         topsName_0: tops[0].title,
         topsName_1: tops[1].title,
         topsImage: tops[0].image,
