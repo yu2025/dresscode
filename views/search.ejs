@@ -6,10 +6,27 @@
 
 <body>
 
-<select name="cloths">
-  <option value="tops"><%- topsName %></option>
-  <option value="bottoms">ボトムス</option>
+<form>
+<select>
+<script>
+const getScrapBox = require("./utils/getScrapBox");
+const getRandomPair = require("./utils/getRandomPair");
+
+/*スクボの全データを取得してくる*/
+const scrapboxData = await getScrapBox(projectURL);
+/*"#tops"タグのついた記事を抽出して配列に格納*/
+const tops = scrapboxData.pages.filter(page => page.descriptions.includes("#tops"));
+
+//tops[i].titleの形にしたい
+var i;
+
+for(i=0; i<100; i+=1){
+document.write('<option value="'tops[i].title'">'tops[i].title'</option>');
+}
+
+</script>
 </select>
+</form>
 
 </body>
 </html>
