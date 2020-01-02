@@ -28,8 +28,10 @@ const baddress = document.getElementById("baddress").innerHTML;
 judge.addEvenetListener("click",judgeHandler);
 
 function judgeHandler(){
- if( `${selectedItemT}と${selectedItemB}` == ${baddress}){
+ if( `${selectedItemT}と${selectedItemB}` == `${baddress}`){
  console.log('アウト');
+ }else{
+ console.log('error');
  }
 }
 
