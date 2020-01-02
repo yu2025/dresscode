@@ -25,7 +25,7 @@ const selectedItemT = document.getElementById("tops_selected").innerHTML;
 const selectedItemB = document.getElementById("bottoms_selected").innerHTML;
 const baddress = document.getElementById("baddress").innerHTML;
 
-judge.addEvenetListener("click",judgeHandler);
+judgeCode.addEvenetListener("click",judgeHandler);
 
 function judgeHandler(){
  if( `${selectedItemT}と${selectedItemB}` == `${baddress}`){
