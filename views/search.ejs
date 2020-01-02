@@ -8,7 +8,7 @@
 <%- include('components/tripGenerateButton') %>
 
 <select name="cloths">
-  <option value="<%- topsName %>" id="topsTitle"><%- topsName %></option>
+  <option value="topsName" id="topsTitle"><%- topsName %></option>
   <option value="bottoms">ボトムス</option>
 </select>
 </form>
@@ -25,7 +25,7 @@ const tops = scrapboxData.pages.filter(page => page.descriptions.includes("#tops
 const bottoms = scrapboxData.pages.filter(page => page.descriptions.includes("#bottoms"));
 
 const topsName = document.getElementById("topsTitle");
-topsName.innerHTML = tops[0].title;
+topsName = tops[0].title;
 </script>
 
 </body>
