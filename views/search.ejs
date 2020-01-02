@@ -10,6 +10,7 @@
 <select id="tops_selected">
 <option id="<%- topsName_0 %>"><%- topsName_0 %></option>
 <option id="<%- topsName_1 %>"><%- topsName_1 %></option>
+<option id="<%- topsName_2 %>"><%- topsName_2 %></option>
 </select>
 
 <select id="bottoms_selected">
@@ -29,7 +30,7 @@ const baddress = document.getElementById("baddress").innerHTML;
 judge.addEventListener('click', judgeHandler);
 
 function judgeHandler(){
- if( `${selectedItemT}と${selectedItemB}` == `${baddress}`){
+ if( `${selectedItemT}${selectedItemB}` == `${baddress}`){
  console.log('アウト');
  }else{
  console.log('error');
