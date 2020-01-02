@@ -5,13 +5,25 @@
 </head>
 
 <body>
-
+<%- include('components/hamburgerMenu.ejs') %>
 
 <select id="tops_selected">
-<option id="<%- topsName_0 %>"><%- topsName_0 %></option>
+<option id="tops1"><%- topsName_0 %></option>
 <option id="<%- topsName_1 %>"><%- topsName_1 %></option>
 <option id="<%- topsName_2 %>"><%- topsName_2 %></option>
 </select>
+
+
+//optionで選ばれたidの写真を持ってきたい
+<script>
+const selectedItemT = document.getElementById("tops_selected");
+const tops1 = document.getElementById("tops1").value; 
+if( `${selectedItemT}` == `${tops1}`){
+ document.write('<option id="<%- baddress_0 %>" src="badImage_0"></option>');
+}else{
+console.log('error')
+}
+</script>
 
 <select id="bottoms_selected">
 <option id="<%- bottomsName %>"><%- bottomsName %></option>
@@ -22,8 +34,8 @@
 
 <script>
 const judge = document.getElementById("judge");
+const TopsImage = document.getElementById("TopsImage");
 const selectedItemT = document.getElementById("tops_selected").value;
-console.log(selectedItemT);
 const selectedItemB = document.getElementById("bottoms_selected").value;
 const baddress = document.getElementById("baddress").innerHTML;
 
@@ -38,7 +50,6 @@ function judgeHandler(){
 }
 
 </script>
-
 <!--
  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
  <script>
