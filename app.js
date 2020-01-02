@@ -37,10 +37,11 @@ app.get("/judgement",async(req,res)=>{
     const tops = scrapboxData.pages.filter(page => page.descriptions.includes("#tops"));
     /*"#activity"タグのついた記事を抽出して配列に格納*/
     const bottoms = scrapboxData.pages.filter(page => page.descriptions.includes("#bottoms"));
+    
     var i;
     var topsItem;
     for(i=0; i<100; i+=1){
-        topsItem = tops[i].title
+        topsItem = tops[i].title;
     }
     
     res.render('search',{
