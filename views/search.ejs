@@ -17,15 +17,15 @@
 </select>
 
 <p id="baddress"><%- baddress_0 %></p>
-<input type="button" value="判定する" id="judge">
+<input type="submit" value="判定する" id="judge">
 
 <script>
-const judgeCode = document.getElementById("judge");
+const judge = document.getElementById("judge");
 const selectedItemT = document.getElementById("tops_selected").innerHTML;
 const selectedItemB = document.getElementById("bottoms_selected").innerHTML;
 const baddress = document.getElementById("baddress").innerHTML;
 
-judgeCode.addEvenetListener("click",judgeHandler);
+judge.addEvenetListener("click",judgeHandler);
 
 function judgeHandler(){
  if( `${selectedItemT}と${selectedItemB}` == `${baddress}`){
