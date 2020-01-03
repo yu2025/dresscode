@@ -25,7 +25,7 @@ choose.addEventListener('click', selectHandler);
 
 function selectHandler(){
    if( `${selectedItemT}` == `${tops1}`){
-       document.write('<img src="'<%- badImage_0 %>'" id="'topsImage'" alt="'<%- baddress_0 %>'">');
+       document.write('<img src="' + ''<%- badImage_0 %>'"' + 'id="'topsImage'" alt="'<%- baddress_0 %>'">');
    }else{
        console.log('error');
    }
