@@ -7,6 +7,7 @@
 <body>
 <%- include('components/hamburgerMenu.ejs') %>
 
+<!-- トップスのセクション -->
 <div class="Image_Section">
    <select id="tops_selected">
    <option id="tops1"><%- topsName_0 %></option>
@@ -20,6 +21,7 @@
 <div id="putImage">
 </div>
 
+<!-- sectionで選ばれたアイテムの写真を呼び出す -->
 <script>
 var selectedItemT = document.getElementById("tops_selected").value;
 const tops1 = document.getElementById("tops1").value;
@@ -42,7 +44,7 @@ function selectHandler(){
 }
 </script>
 
-
+<!-- ボトムスのセクション -->
 <div class="Image_Section">
     <select id="bottoms_selected">
        <option id="bottoms1"><%- bottomsName %></option>
@@ -55,6 +57,7 @@ function selectHandler(){
 <div id="putBottomsImage">
 </div>
 
+<!-- sectionで選ばれたアイテムの写真を呼び出す -->
 <script>
 var putB = document.getElementById("putBottomsImage");
 var selectedItemB = document.getElementById("bottoms_selected").value;
@@ -73,7 +76,9 @@ function putBHandler(){
 
 </script>
 
+<!-- 悪いドレスコードのタイトルのidを設定するだけのもの -->
 <p id="baddress"><%- baddress_0 %></p>
+
 <input type="submit" value="判定する" id="judge">
 
 <script>
@@ -85,6 +90,7 @@ judge.addEventListener('click', judgeHandler);
 
 function judgeHandler(){
  if( `${selectedItemT}${selectedItemB}` == `${baddress}`){
+ console.log(baddress);
  console.log('アウト');
  }else{
  console.log('error');
@@ -110,7 +116,14 @@ left:50%;
 transform:translate(-135%,-50%);
 }
 
+#judge{
+position:relative;
+transform:translate(-50%,-50%);
+}
 
+#baddress{
+color:white;
+}
 
 .Image{
    width: 276px;
