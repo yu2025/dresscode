@@ -45,7 +45,7 @@ function selectHandler(){
 
 <div class="Image_Section">
     <select id="bottoms_selected">
-    <option id="bottoms1"><%- bottomsName %></option>
+       <option id="bottoms1"><%- bottomsName %></option>
     </select>
     <input type="submit" value="OK" id="choose">
 </div>
@@ -58,6 +58,7 @@ function selectHandler(){
 <script>
 var putB = document.getElementById("putBottomsImage");
 var selectedItemB = document.getElementById("bottoms_selected").value;
+const bottoms1 = document.getElementById("bottoms1").value;
 
 choose.addEventListener('click', putBHandler);
 
@@ -75,8 +76,6 @@ function putBHandler(){
 <script>
 const judge = document.getElementById("judge");
 const TopsImage = document.getElementById("TopsImage");
-//var selectedItemT = document.getElementById("tops_selected").value;
-//var selectedItemB = document.getElementById("bottoms_selected").value;
 const baddress = document.getElementById("baddress").innerHTML;
 
 judge.addEventListener('click', judgeHandler);
