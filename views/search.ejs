@@ -26,7 +26,7 @@ const tops1 = document.getElementById("tops1").value;
 const tops2 = document.getElementById("tops2").value;
 const tops3 = document.getElementById("tops3").value;
 const putImage = document.getElementById("putImage");
-const choose = document.getElementById("choose");
+var choose = document.getElementById("choose");
 
 choose.addEventListener('click', selectHandler);
 
@@ -50,19 +50,20 @@ function selectHandler(){
     <input type="submit" value="OK" id="choose">
 </div>
 
+
 <!-- optionで選ばれたidの写真を持ってきたい -->
 <div id="putBottomsImage">
 </div>
 
 <script>
-var putB = document.getElementById("put");
+var putB = document.getElementById("putBottomsImage");
 var selectedItemB = document.getElementById("bottoms_selected").value;
 
-putB.addEventListener('click', putBHandler);
+choose.addEventListener('click', putBHandler);
 
 function putBHandler(){
     if( `${selectedItemB}` == `${bottoms1}`){
-       putImage.innerHTML= "<img src= '<%- topsImage_0 %>' id='topsImage'>";
+       putB.innerHTML= "<img src= '<%- topsImage_0 %>' id='topsImage'>";
     }
 }
 
@@ -95,7 +96,7 @@ function judgeHandler(){
    margin-top:20px;
 }
 
-#tops_selected{
+#tops_selected,#bottoms_selected{
 position:relative;
 left:50%;
 transform:translate(-50%,-50%);
