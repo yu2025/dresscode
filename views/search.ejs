@@ -65,6 +65,8 @@ choose.addEventListener('click', putBHandler);
 function putBHandler(){
     if( `${selectedItemB}` == `${bottoms1}`){
        putB.innerHTML= "<img src= '<%- bottomsImage %>' class='Image'>";
+    }else{
+       console.log('error');
     }
 }
 
