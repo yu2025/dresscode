@@ -47,7 +47,9 @@ app.get("/judgement",async(req,res)=>{
         topsName_0: tops[0].title,
         topsName_1: tops[1].title,
         topsName_2: tops[2].title,
-        topsImage: tops[0].image,
+        topsImage_0: tops[0].image,
+        topsImage_1: tops[1].image,
+        topsImage_2: tops[2].image,
         bottomsName: bottoms[0].title,
         bottomsImage: bottoms[0].image
     });
