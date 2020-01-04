@@ -30,7 +30,7 @@ const tops3 = document.getElementById("tops3").value;
 const putImage = document.getElementById("putImage");
 var choose = document.getElementById("choose");
 
-choose.onclick = function(){
+$(document).on('click', '#choose', function(){
   if( `${selectedItemT}` == `${tops1}`){
        putImage.innerHTML= "<img src= '<%- topsImage_0 %>' class='Image'>";
    }else if(`${selectedItemT}` == `${tops2}`){
@@ -38,7 +38,7 @@ choose.onclick = function(){
    }else{
        putImage.innerHTML= "<img src= '<%- topsImage_2 %>' class='Image'>";
    }
-};
+});
 
 
 </script>
