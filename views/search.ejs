@@ -7,7 +7,7 @@
 <body>
 <%- include('components/hamburgerMenu.ejs') %>
 
-<div id="tops">
+<div id="Image_Section">
    <select id="tops_selected">
    <option id="tops1"><%- topsName_0 %></option>
    <option id="tops2"><%- topsName_1 %></option>
@@ -43,6 +43,50 @@ function selectHandler(){
 </script>
 
 
+<div id="Image_Section">
+    <select id="bottoms_selected">
+    <option id="bottoms1"><%- bottomsName %></option>
+    </select>
+    <input type="submit" value="OK" id="choose">
+</div>
+
+<!-- optionで選ばれたidの写真を持ってきたい -->
+<div id="putBottomsImage">
+</div>
+
+<script>
+var putB = document.getElementById("put");
+var selectedItemB = document.getElementById("bottoms_selected").value;
+
+putB.addEventListener('click', putBHandler);
+
+function putBHandler(){
+    if( `${selectedItemB}` == `${bottoms1}`){
+       putImage.innerHTML= "<img src= '<%- topsImage_0 %>' id='topsImage'>";
+}
+
+</script>
+
+<p id="baddress"><%- baddress_0 %></p>
+<input type="submit" value="判定する" id="judge">
+
+<script>
+const judge = document.getElementById("judge");
+const TopsImage = document.getElementById("TopsImage");
+var selectedItemT = document.getElementById("tops_selected").value;
+var selectedItemB = document.getElementById("bottoms_selected").value;
+const baddress = document.getElementById("baddress").innerHTML;
+
+judge.addEventListener('click', judgeHandler);
+
+function judgeHandler(){
+ if( `${selectedItemT}${selectedItemB}` == `${baddress}`){
+ console.log('アウト');
+ }else{
+ console.log('error');
+ }
+}
+
 <style>
 #tops{
    margin-top:20px;
@@ -69,29 +113,6 @@ transform:translate(-135%,-50%);
 }
 </style>
 
-<select id="bottoms_selected">
-<option id="<%- bottomsName %>"><%- bottomsName %></option>
-</select>
-
-<p id="baddress"><%- baddress_0 %></p>
-<input type="submit" value="判定する" id="judge">
-
-<script>
-const judge = document.getElementById("judge");
-const TopsImage = document.getElementById("TopsImage");
-var selectedItemT = document.getElementById("tops_selected").value;
-const selectedItemB = document.getElementById("bottoms_selected").value;
-const baddress = document.getElementById("baddress").innerHTML;
-
-judge.addEventListener('click', judgeHandler);
-
-function judgeHandler(){
- if( `${selectedItemT}${selectedItemB}` == `${baddress}`){
- console.log('アウト');
- }else{
- console.log('error');
- }
-}
 
 </script>
 <!--
