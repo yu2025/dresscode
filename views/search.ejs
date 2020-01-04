@@ -30,7 +30,10 @@ const tops3 = document.getElementById("tops3").value;
 const putImage = document.getElementById("putImage");
 var choose = document.getElementById("choose");
 
-choose.onclick = function(){
+choose.addEventListener('click', selectHandler);
+
+function selectHandler(){
+   //tops1を選んだ場合
    if( `${selectedItemT}` == `${tops1}`){
        putImage.innerHTML= "<img src= '<%- topsImage_0 %>' class='Image'>";
    }else if(`${selectedItemT}` == `${tops2}`){
@@ -38,7 +41,7 @@ choose.onclick = function(){
    }else{
        putImage.innerHTML= "<img src= '<%- topsImage_0 %>' class='Image'>";
    }
-};
+}
 
 </script>
 
