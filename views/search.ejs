@@ -78,6 +78,7 @@ function putBHandler(){
 
 <!-- 悪いドレスコードのタイトルのidを設定するだけのもの -->
 <p id="baddress"><%- baddress_0 %></p>
+<p id="baddress1"><%- baddress_1 %></p>
 
 <input type="submit" value="判定する" id="judge">
 
@@ -85,12 +86,15 @@ function putBHandler(){
 const judge = document.getElementById("judge");
 const TopsImage = document.getElementById("TopsImage");
 const baddress = document.getElementById("baddress").innerHTML;
+const baddress1 = document.getElementById("baddress1").innerHTML;
 
 judge.addEventListener('click', judgeHandler);
 
 function judgeHandler(){
  if( `${selectedItemT}${selectedItemB}` == `${baddress}`){
  console.log(baddress);
+ console.log('アウト');
+ }else if(`${selectedItemT}${selectedItemB}` == `${baddress1}`){
  console.log('アウト');
  }else{
  console.log('error');
@@ -122,8 +126,9 @@ left:50%;
 transform:translate(-50%,-50%);
 }
 
-#baddress{
+#baddress,#baddress1{
 color:white;
+font-size:5px;
 }
 
 .Image{
