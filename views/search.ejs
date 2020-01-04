@@ -7,7 +7,7 @@
 <body>
 <%- include('components/hamburgerMenu.ejs') %>
 
-<div id="Image_Section">
+<div class="Image_Section">
    <select id="tops_selected">
    <option id="tops1"><%- topsName_0 %></option>
    <option id="tops2"><%- topsName_1 %></option>
@@ -43,7 +43,7 @@ function selectHandler(){
 </script>
 
 
-<div id="Image_Section">
+<div class="Image_Section">
     <select id="bottoms_selected">
     <option id="bottoms1"><%- bottomsName %></option>
     </select>
@@ -92,7 +92,7 @@ function judgeHandler(){
 </script>
 
 <style>
-#tops{
+.Image_Section{
    margin-top:20px;
 }
 
