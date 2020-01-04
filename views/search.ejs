@@ -14,7 +14,9 @@
    <option id="tops2"><%- topsName_1 %></option>
    <option id="tops3"><%- topsName_2 %></option>
    </select>
-   <input type="submit" value="OK" id="choose">
+   <div>
+   <button id="choose">OK</button>
+   </div>
 </div>
 
 <!-- optionで選ばれたidの写真を持ってきたい -->
@@ -30,7 +32,8 @@ const tops3 = document.getElementById("tops3").value;
 const putImage = document.getElementById("putImage");
 var choose = document.getElementById("choose");
 
-$(document).on('click', '#choose', function(){
+$(function(){
+$(document).on('click', '.choose', function(){
   if( `${selectedItemT}` == `${tops1}`){
        putImage.innerHTML= "<img src= '<%- topsImage_0 %>' class='Image'>";
    }else if(`${selectedItemT}` == `${tops2}`){
@@ -38,6 +41,7 @@ $(document).on('click', '#choose', function(){
    }else{
        putImage.innerHTML= "<img src= '<%- topsImage_2 %>' class='Image'>";
    }
+});
 });
 
 
