@@ -33,11 +33,11 @@ choose.addEventListener('click', selectHandler);
 function selectHandler(){
    //tops1を選んだ場合
    if( `${selectedItemT}` == `${tops1}`){
-       putImage.innerHTML= "<img src= '<%- topsImage_0 %>' id='topsImage'>";
+       putImage.innerHTML= "<img src= '<%- topsImage_0 %>' class='Image'>";
    }else if(`${selectedItemT}` == `${tops2}`){
-       putImage.innerHTML= "<img src= '<%- topsImage_1 %>' id='topsImage'>";
+       putImage.innerHTML= "<img src= '<%- topsImage_1 %>' class='Image'>";
    }else{
-       putImage.innerHTML= "<img src= '<%- topsImage_0 %>' id='topsImage'>";
+       putImage.innerHTML= "<img src= '<%- topsImage_0 %>' class='Image'>";
    }
 }
 </script>
@@ -63,7 +63,7 @@ choose.addEventListener('click', putBHandler);
 
 function putBHandler(){
     if( `${selectedItemB}` == `${bottoms1}`){
-       putB.innerHTML= "<img src= '<%- topsImage_0 %>' id='topsImage'>";
+       putB.innerHTML= "<img src= '<%- bottomsImage %>' class='Image'>";
     }
 }
 
@@ -75,8 +75,8 @@ function putBHandler(){
 <script>
 const judge = document.getElementById("judge");
 const TopsImage = document.getElementById("TopsImage");
-var selectedItemT = document.getElementById("tops_selected").value;
-var selectedItemB = document.getElementById("bottoms_selected").value;
+//var selectedItemT = document.getElementById("tops_selected").value;
+//var selectedItemB = document.getElementById("bottoms_selected").value;
 const baddress = document.getElementById("baddress").innerHTML;
 
 judge.addEventListener('click', judgeHandler);
@@ -108,7 +108,7 @@ left:50%;
 transform:translate(-135%,-50%);
 }
 
-#topsImage{
+.Image{
    width: 276px;
    height: 368px;
    position:relative;
