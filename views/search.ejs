@@ -30,10 +30,7 @@ const tops3 = document.getElementById("tops3").value;
 const putImage = document.getElementById("putImage");
 var choose = document.getElementById("choose");
 
-choose.addEventListener('click', selectHandler);
-
-function selectHandler(){
-   //tops1を選んだ場合
+${'choose'}.on('click', selectHandler){
    if( `${selectedItemT}` == `${tops1}`){
        putImage.innerHTML= "<img src= '<%- topsImage_0 %>' class='Image'>";
    }else if(`${selectedItemT}` == `${tops2}`){
