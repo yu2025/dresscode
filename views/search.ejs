@@ -15,9 +15,12 @@
 <input type="submit" value="OK" id="choose">
 
 <!-- optionで選ばれたidの写真を持ってきたい -->
+<div id="putImage">
+</div>
 
 <script>
 const selectedItemT = document.getElementById("tops_selected");
+const putImage = document.getElementById("putImage");
 const tops1 = document.getElementById("tops1").value;
 const choose = document.getElementById("choose");
 
@@ -25,7 +28,7 @@ choose.addEventListener('click', selectHandler);
 
 function selectHandler(){
    if( `${selectedItemT}` == `${tops1}`){
-       document.write('<img src=' + ''<%- badImage_0 %>'');
+       putImage.innerHTML= '<img src=' + ''<%- badImage_0 %>'>';
    }else{
        console.log('error');
    }
