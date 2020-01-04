@@ -30,18 +30,16 @@ const tops3 = document.getElementById("tops3").value;
 const putImage = document.getElementById("putImage");
 var choose = document.getElementById("choose");
 
-choose.addEventListener('click', selectHandler);
-
-function selectHandler(){
-   //tops1を選んだ場合
-   if( `${selectedItemT}` == `${tops1}`){
+choose.onclick = function(){
+  if( `${selectedItemT}` == `${tops1}`){
        putImage.innerHTML= "<img src= '<%- topsImage_0 %>' class='Image'>";
    }else if(`${selectedItemT}` == `${tops2}`){
        putImage.innerHTML= "<img src= '<%- topsImage_1 %>' class='Image'>";
    }else{
-       putImage.innerHTML= "<img src= '<%- topsImage_0 %>' class='Image'>";
+       putImage.innerHTML= "<img src= '<%- topsImage_2 %>' class='Image'>";
    }
-}
+};
+
 
 </script>
 
