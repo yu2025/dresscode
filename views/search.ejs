@@ -7,12 +7,14 @@
 <body>
 <%- include('components/hamburgerMenu.ejs') %>
 
-<select id="tops_selected">
-<option id="tops1"><%- topsName_0 %></option>
-<option id="tops2"><%- topsName_1 %></option>
-<option id="tops3"><%- topsName_2 %></option>
-</select>
-<input type="submit" value="OK" id="choose">
+<div id="tops">
+   <select id="tops_selected">
+   <option id="tops1"><%- topsName_0 %></option>
+   <option id="tops2"><%- topsName_1 %></option>
+   <option id="tops3"><%- topsName_2 %></option>
+   </select>
+   <input type="submit" value="OK" id="choose">
+</div>
 
 <!-- optionで選ばれたidの写真を持ってきたい -->
 <div id="putImage">
@@ -42,6 +44,12 @@ function selectHandler(){
 
 
 <style>
+#tops{
+   position:relative;
+   left:50%;
+   transform:translate(-50%,-50%);
+}
+
 #topsImage{
    width: 276px;
    height: 368px;
