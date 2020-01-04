@@ -43,6 +43,7 @@ app.get("/judgement",async(req,res)=>{
     res.render('search',{
         title:"dresscode",
         baddress_0: baddresscode[0].title,
+        baddress_1: baddresscode[1].title,
         topsName_0: tops[0].title,
         topsName_1: tops[1].title,
         topsName_2: tops[2].title,
