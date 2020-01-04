@@ -47,7 +47,7 @@ function selectHandler(){
     <select id="bottoms_selected">
        <option id="bottoms1"><%- bottomsName %></option>
     </select>
-    <input type="submit" value="OK" id="choose">
+    <input type="submit" value="OK" id="choose1">
 </div>
 
 
@@ -59,8 +59,9 @@ function selectHandler(){
 var putB = document.getElementById("putBottomsImage");
 var selectedItemB = document.getElementById("bottoms_selected").value;
 const bottoms1 = document.getElementById("bottoms1").value;
+const choose1 = document.getElementById("choose1");
 
-choose.addEventListener('click', putBHandler);
+choose1.addEventListener('click', putBHandler);
 
 function putBHandler(){
     if( `${selectedItemB}` == `${bottoms1}`){
@@ -103,11 +104,13 @@ left:50%;
 transform:translate(-50%,-50%);
 }
 
-#choose{
+#choose,#choose1{
 position:relative;
 left:50%;
 transform:translate(-135%,-50%);
 }
+
+
 
 .Image{
    width: 276px;
