@@ -29,6 +29,26 @@ app.get("/collect", async(req, res) =>{
     });
 });
 
+//謎旅を生成する
+app.get("/api/generate", async (req, res) => {
+    /*スクボの全データを取得してくる*/
+    const scrapboxData = await getScrapBox(projectURL);
+    /*"#tops"タグのついた記事を抽出して配列に格納*/
+    const tops = scrapboxData.pages.filter(page => page.descriptions.includes("#tops"));
+    /*"#activity"タグのついた記事を抽出して配列に格納*/
+    const bottoms = scrapboxData.pages.filter(page => page.descriptions.includes("#bottoms"));
+    /*ランダムなペアを取得する*/
+    const randomPair = getRandomPair(tops, bottoms);
+
+    res.render('suggest', {
+        title: "dresscode",
+        topsName: randomPair[0].title,
+        topsImage: randomPair[0].image,
+        bottomsName: randomPair[1].title,
+        bottomsImage: randomPair[1].image
+    });
+});
+
 //服を判定するページ
 app.get("/judgement",async(req,res)=>{
     /*スクボの全データを取得してくる*/
@@ -56,25 +76,6 @@ app.get("/judgement",async(req,res)=>{
     });
 });
 
-//謎旅を生成する
-app.get("/api/generate", async (req, res) => {
-    /*スクボの全データを取得してくる*/
-    const scrapboxData = await getScrapBox(projectURL);
-    /*"#tops"タグのついた記事を抽出して配列に格納*/
-    const tops = scrapboxData.pages.filter(page => page.descriptions.includes("#tops"));
-    /*"#activity"タグのついた記事を抽出して配列に格納*/
-    const bottoms = scrapboxData.pages.filter(page => page.descriptions.includes("#bottoms"));
-    /*ランダムなペアを取得する*/
-    const randomPair = getRandomPair(tops, bottoms);
-
-    res.render('suggest', {
-        title: "dresscode",
-        topsName: randomPair[0].title,
-        topsImage: randomPair[0].image,
-        bottomsName: randomPair[1].title,
-        bottomsImage: randomPair[1].image
-    });
-});
 
 app.listen(port, () => {
     console.log("server is ready>:)");
